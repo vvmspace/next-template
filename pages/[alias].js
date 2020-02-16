@@ -1,5 +1,6 @@
-import { useRouter } from 'next/router';
 import axios from 'axios';
+import config from '../config';
+const { api_url } = config;
 
 const Post = props => {
 
@@ -27,9 +28,7 @@ Post.getInitialProps = async function({ query }) {
     const { alias } = query;
 
 
-    const res = await axios.get(`http://vvm.space:7007/api/v1/venue/${alias}`);
-
-//    const res = await fetch(`http://vvm.space:7007/api/v1/venue/${alias}`);
+    const res = await axios.get(`${api_url}/api/v1/venue/${alias}`);
     const venue = res.data;
   
     console.log(`Show data fetched. Count: ${venue.events.length}`);
