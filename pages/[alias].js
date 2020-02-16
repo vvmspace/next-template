@@ -12,7 +12,11 @@ const Post = props => {
         <p>{address}</p>
         <h2>Концерты в {venue.name}</h2>
           {events.map(event => (
-              <div><h3>{event.name}</h3></div>
+              <div>
+                  <h3>{event.name}</h3>
+                  <div>{(event.min_price == event.max_price) && `${event.min_price} руб.` || `от ${event.min_price} до ${event.max_price} руб.`}</div>
+                  <img src={event.image} />
+              </div>
           ))}
       </div>
     );
