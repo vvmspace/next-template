@@ -15,13 +15,12 @@ const contentStyle = {
 };
 
 const Layout = props => (
-    <div className="Layout" style={layoutStyle}>
-        <Header />
-        <div className="Content" style={contentStyle}>
+    <>
+        <NavBar />
+        <div className="Content">
             {props.children}
         </div>
-        <NavBar />
-    </div>
+    </>
 );
 
 export default Layout;
