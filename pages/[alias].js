@@ -21,7 +21,7 @@ const Post = props => {
           ))}
       </div>
     );
-  }
+  };
 
 Post.getInitialProps = async function({ query }) {
 
