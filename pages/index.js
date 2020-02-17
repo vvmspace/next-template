@@ -1,7 +1,9 @@
+import Layout from "../components/Layout";
+
 export default function Index() {
     return (
-      <div>
-        <p>Hello Next.js</p>
-      </div>
+      <Layout>
+          <p>Hello <a href={'https://github.com/vvmspace/next-template'} >Next.js template</a></p>
+      </Layout>
     );
   }
