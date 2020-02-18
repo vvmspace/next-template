@@ -10,6 +10,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import EventCard from "../components/EventCard";
+import EventCardList from "../components/EventCardList";
 
 const Post = props => {
 
@@ -34,13 +35,7 @@ const Post = props => {
                     </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Grid container spacing={2}>
-                        {weekends
-                            .sort((event1, event2) => (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
-                            .map(event => (
-                                <Grid item xs={12} sm={4} md={2}><EventCard event={event} key={event.uuid} /></Grid>
-                            ))}
-                    </Grid>
+                    <EventCardList events={weekends} showVenue={true} />
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel>
@@ -54,13 +49,11 @@ const Post = props => {
                     </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Grid container spacing={2}>
                         {weekly
                             .sort((event1, event2) => (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
                             .map(event => (
                                 <Grid item xs={12} sm={4} md={2}><EventCard event={event} key={event.uuid} /></Grid>
                             ))}
-                    </Grid>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
 

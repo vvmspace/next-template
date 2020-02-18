@@ -21,7 +21,8 @@ const useStyles = makeStyles({
 const EventCard = props => {
     const classes = useStyles();
 
-    const {event} = props;
+    const {event, showVenue} = props;
+
     const {description} = event || {};
     const link = `/concert/${event.alias || event.uuid}`;
 
@@ -50,8 +51,10 @@ const EventCard = props => {
                     <Typography gutterBottom variant={"h5"} component="h2">
                         <A href={link} title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{event && event.name && event.name.substr(0, 60)}</A>
                     </Typography>
-                    <Typography gutterBottom variant="subtitle2" component="h2">
-                        <A href={link}>{pretty_date}, {event.age}+</A>
+                    {showVenue
+                     && (<Typography gutterBottom variant="subtitle2" component="h2"><A href={link}>{event.venue.name}</A></Typography>)}
+                    <Typography gutterBottom variant="subtitle1" component="h2">
+                        {pretty_date}, {event.age}+
                     </Typography>
                 </CardContent>
             </CardActionArea>

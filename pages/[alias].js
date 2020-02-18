@@ -1,6 +1,7 @@
 import axios from 'axios';
 import config from '../config';
 import Layout from "../components/Layout";
+import EventCardList from "../components/EventCardList";
 import { Typography, Grid, Divider } from '@material-ui/core';
 const { api_url } = config;
 import Head from "next/head";
@@ -11,6 +12,12 @@ const Post = props => {
 
     const { venue } = props;
     const { name, address, events } = venue;
+
+    const sorted = {
+        events: events.sort(
+            (event1, event2) => 
+            (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
+    };
 
     return (
       <Layout>
@@ -31,11 +38,7 @@ const Post = props => {
           </Typography>
           <Divider/>
           <Grid container spacing={2}>
-          {events
-              .sort((event1, event2) => (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
-              .map(event => (
-              <Grid item xs={12} sm={4} md={2}><EventCard event={event} key={event.uuid} /></Grid>
-          ))}
+              <EventCardList events={sorted.events} />
           </Grid>
       </Layout>
     );
