@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from '../config';
 import Layout from "../components/Layout";
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, Divider } from '@material-ui/core';
 const { api_url } = config;
 import Head from "next/head";
 
@@ -20,17 +20,21 @@ const Post = props => {
           <Typography variant="h2" component="h1" gutterBottom>
               {name}
           </Typography>
-          <Typography variant="subtitle" component="p" gutterBottom>
+          <Typography variant="subtitle1" component="p" gutterBottom>
               {address}
           </Typography>
           <Typography variant="h4" component="p" gutterBottom>
               Концерты в {name}
           </Typography>
+          <Typography variant="subtitle1" component="p" gutterBottom>
+              Благодаря нашим партнёрам вы можете <b>купить билеты на концерты в {name} без наценки и сервисного сбора</b>
+          </Typography>
+          <Divider/>
           <Grid container spacing={2}>
           {events
               .sort((event1, event2) => (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
               .map(event => (
-              <Grid item sm={2}><EventCard event={event} /></Grid>
+              <Grid item xs={12} sm={4} md={2}><EventCard event={event} key={event.uuid} /></Grid>
           ))}
           </Grid>
       </Layout>
