@@ -39,16 +39,16 @@ const EventCard = props => {
     const goPnm = event => () => (typeof window !== 'undefined') && window.open(event.url + '?promote=concertmoscow') || (() => {});
 
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root} style={{width: '100%'}}>
             <CardActionArea>
                 <A href={link}><CardMedia
                     className={classes.media}
-                    image={event.image.replace('218x161', '436x322')}
+                    image={event.image || '/cm.png'}
                     title={`Концерт ${event.name} в Москве`}
                 /></A>
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        <A href={link} title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{event.name}</A>
+                    <Typography gutterBottom variant={"h5"} component="h2">
+                        <A href={link} title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{event && event.name && event.name.substr(0, 60)}</A>
                     </Typography>
                     <Typography gutterBottom variant="subtitle2" component="h2">
                         <A href={link}>{pretty_date}, {event.age}+</A>

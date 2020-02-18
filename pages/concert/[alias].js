@@ -14,10 +14,19 @@ const Post = props => {
 
     const isConcert = event.category.includes('Концерт') || event.description.includes('Концерт');
 
+    const date_formatted = new Date(event.date).toLocaleString('ru', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        timeZone: 'Europe/Moscow'
+    });
+
     return (
         <Layout>
             <Head>
-                <title>Концерты {event.name} в Москве</title>
+                <title>Концерты {event.name} в Москве {date_formatted}</title>
             </Head>
             <Typography variant="h3" component="h1" gutterBottom>
                 {isConcert && 'Концерт '}{name} в Москве
@@ -25,15 +34,18 @@ const Post = props => {
             <Typography variant="h5" component="h2" gutterBottom>
                 Стоимость билетов на {isConcert && 'концерт '}{name} в {event.venue.name}:
             </Typography>
-            <Typography variant="subtitle2" component="div" gutterBottom>
-                По данным от {new Date(event.updated_at).toLocaleString('ru', {
+            <Typography variant="subtitle2" component="p" gutterBottom>
+                По данным от {new Date(event.updatedAt).toLocaleString('ru', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
                 hour: 'numeric',
-                minute: 'numeric',
+                // minute: 'numeric',
                 timeZone: 'Europe/Moscow'
-            })} стоимость билета составляет
+            })} <b>цена билета</b> {
+                (event.min_price === event.max_price)
+                && (<>составляет <b>{event.min_price}₽</b></>)
+                || (<>находится в диапазоне от <b>{event.min_price}</b> ₽ до <b>{event.max_price}</b> ₽</>)}
             </Typography>
 
 
