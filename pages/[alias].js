@@ -15,7 +15,7 @@ const Post = props => {
 
     const sorted = {
         events: events.sort(
-            (event1, event2) => 
+            (event1, event2) =>
             (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
     };
 
@@ -37,9 +37,7 @@ const Post = props => {
               Благодаря нашим партнёрам вы можете <b>купить билеты на концерты в {name} без наценки и сервисного сбора</b>
           </Typography>
           <Divider/>
-          <Grid container spacing={2}>
-              <EventCardList events={sorted.events} />
-          </Grid>
+          <EventCardList events={sorted.events} />
       </Layout>
     );
   };
@@ -51,9 +49,9 @@ Post.getInitialProps = async function({ query }) {
 
     const res = await axios.get(`${api_url}/api/v1/venue/${alias}`);
     const venue = res.data;
-  
+
     console.log(`Show data fetched. Count: ${venue.events.length}`);
-  
+
     return {
         venue
     };

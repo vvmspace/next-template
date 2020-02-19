@@ -49,11 +49,7 @@ const Post = props => {
                     </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                        {weekly
-                            .sort((event1, event2) => (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
-                            .map(event => (
-                                <Grid item xs={12} sm={4} md={2}><EventCard event={event} key={event.uuid} /></Grid>
-                            ))}
+                    <EventCardList events={weekly} showVenue={true} />
                 </ExpansionPanelDetails>
             </ExpansionPanel>
 
@@ -68,13 +64,7 @@ const Post = props => {
                     </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                    <Grid container spacing={2}>
-                        {top
-                            .sort((event1, event2) => (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
-                            .map(event => (
-                                <Grid item xs={12} sm={4} md={2}><EventCard event={event} key={event.uuid} /></Grid>
-                            ))}
-                    </Grid>
+                    <EventCardList events={top} showVenue={true} />
                 </ExpansionPanelDetails>
             </ExpansionPanel>
         </Layout>

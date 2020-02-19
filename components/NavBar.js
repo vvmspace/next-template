@@ -113,8 +113,8 @@ export default function PrimarySearchAppBar(props) {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Скоро</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Скоро</MenuItem>
         </Menu>
     );
 
@@ -159,9 +159,13 @@ export default function PrimarySearchAppBar(props) {
         </Menu>
     );
 
+    const showSoon = () => {
+        alert('Скоро!');
+    }
+
     return (
         <div className={classes.grow}>
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar>
                     <IconButton
                         edge="start"
@@ -175,7 +179,7 @@ export default function PrimarySearchAppBar(props) {
                     <Typography className={classes.title} variant="h6" noWrap>
                         concert.moscow
                     </Typography>
-                    <div className={classes.search}>
+                    <div onClick={showSoon} className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />
                         </div>
@@ -190,12 +194,12 @@ export default function PrimarySearchAppBar(props) {
                     </div>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <IconButton aria-label="show 4 new mails" color="inherit">
+                        <IconButton aria-label="show 4 new mails" color="inherit" onClick={showSoon}>
                             <Badge badgeContent={4} color="secondary">
                                 <MailIcon />
                             </Badge>
                         </IconButton>
-                        <IconButton aria-label="show 17 new notifications" color="inherit">
+                        <IconButton aria-label="show 17 new notifications" color="inherit" onClick={showSoon}>
                             <Badge badgeContent={17} color="secondary">
                                 <NotificationsIcon />
                             </Badge>
@@ -224,6 +228,7 @@ export default function PrimarySearchAppBar(props) {
                     </div>
                 </Toolbar>
             </AppBar>
+            <Toolbar/>
             {renderMobileMenu}
             {renderMenu}
         </div>
