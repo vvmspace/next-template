@@ -6,30 +6,63 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ArrowRight from '@material-ui/icons/ArrowRight';
 import { makeStyles } from '@material-ui/core/styles';
+
+import MenuItem from "./MenuItem";
+
 const useStyles = makeStyles({
     list: {
         width: 250,
     }
 });
 
+const topLinks = [{
+        text: 'Сегодня',
+        href: '/today',
+    },{
+        text: 'Завтра',
+        href: '/tomorrow',
+    },{
+        text: 'На выходных',
+        href: '/weekends',
+    },{
+        text: 'Неделя',
+        href: '/weekly',
+    },{
+        text: 'Top',
+        href: '/top',
+    },
+];
+
+const bottomLinks = [{
+        text: 'Rock',
+        href: '/rock',
+    },{
+        text: 'Rap',
+        href: '/rap',
+    },{
+        text: 'Pop',
+        href: '/pop',
+    },{
+        text: 'Jazz',
+        href: '/jazz',
+    },{
+        text: 'Акустика',
+        href: '/acoustic',
+    },
+];
+
 const Menu = props => {
     const classes = useStyles();
     return (<div className={classes.list}>
         <List>
-            {['Сегодня', 'Завтра', 'На выходных', 'Неделя'].map((text, index) => (
-                <ListItem button key={text}>
-                    <ListItemIcon><ArrowRight/></ListItemIcon>
-                    <ListItemText primary={text} />
-                </ListItem>
+            {topLinks.map(({text, href}) => (
+                <MenuItem text={text} href={href} />
             ))}
         </List>
         <Divider />
         <List>
-            {['Rock', 'Rap', 'Pop', 'Jazz'].map((text, index) => (
-                <ListItem button key={text}>
-                    <ListItemIcon><ArrowRight/></ListItemIcon>
-                    <ListItemText primary={text} />
-                </ListItem>
+            {bottomLinks.map(({text, href}) => (
+                <MenuItem text={text} href={href} />
             ))}
         </List>
     </div>)
