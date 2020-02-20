@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import { Typography, Grid } from '@material-ui/core';
 const { api_url } = config;
 import Head from "next/head";
+import Button from "@material-ui/core/Button";
 
 import EventCard from "../../components/EventCard";
 const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
@@ -50,7 +51,10 @@ const Post = props => {
                 && (<>составляет <b>{event.min_price}₽</b></>)
                 || (<>находится в диапазоне от <b>{event.min_price}</b> ₽ до <b>{event.max_price}</b> ₽</>)}
             </Typography>
-
+            <Button variant="contained" color="primary" href={event.url}>
+                Купить билет
+            </Button>
+Нщг
 
             {/*{JSON.stringify(event)}*/}
         </Layout>
