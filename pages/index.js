@@ -22,7 +22,7 @@ const Post = props => {
                 <title> concert.moscow - билеты на концерты в Москве без наценки и сервисного сбора</title>
             </Head>
             <Typography gutterBottom variant="h3" component="h1">
-                Концерты в Москве!
+                Концерты в Москве
             </Typography>
             <ExpansionPanel>
                 <ExpansionPanelSummary
