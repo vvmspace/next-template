@@ -184,12 +184,12 @@ export default function PrimarySearchAppBar(props) {
                             <SearchIcon />
                         </div>
                         <InputBase
-                            placeholder="Search…"
+                            placeholder="Поиск…"
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }}
-                            inputProps={{ 'aria-label': 'search' }}
+                            inputProps={{ 'aria-label': 'Поиск' }}
                         />
                     </div>
                     <div className={classes.grow} />
