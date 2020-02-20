@@ -33,7 +33,7 @@ const topLinks = [{
 const bottomLinks = [{
         text: 'Rock',
         href: '/rock',
-        icon: <WhatshotIcon color={'red'}/>,
+        icon: <WhatshotIcon style={{color: 'red'}}/>,
     },{
         text: 'Rap & Hip-Hop',
         href: '/rap',
