@@ -59,10 +59,10 @@ const EventCard = props => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary" onClick={goPnm(event)}>
+                <Button size="small" color="primary" onClick={goPnm(event)} style={{ color: '#448b00' }}>
                     Билеты {(event.max_price !== event.min_price) && `от ${event.min_price} ₽` || `по ${event.min_price} ₽`}
                 </Button>
-                <Button size="small" color="primary" href={link}>
+                <Button size="small" color="primary" href={link} style={{ color: '#448b00' }}>
                     Подробнее
                 </Button>
             </CardActions>
