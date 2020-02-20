@@ -194,13 +194,8 @@ export default function PrimarySearchAppBar(props) {
                     </div>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <IconButton aria-label="show 4 new mails" color="inherit" onClick={showSoon}>
-                            <Badge badgeContent={4} color="secondary">
-                                <MailIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton aria-label="show 17 new notifications" color="inherit" onClick={showSoon}>
-                            <Badge badgeContent={17} color="secondary">
+                        <IconButton aria-label="сайт в разработке, скоро будет всё" color="inherit" onClick={showSoon}>
+                            <Badge badgeContent={1} color="secondary">
                                 <NotificationsIcon />
                             </Badge>
                         </IconButton>
