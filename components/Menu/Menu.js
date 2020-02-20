@@ -5,12 +5,19 @@ import { makeStyles } from '@material-ui/core/styles';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 
 import MenuItem from "./MenuItem";
+import MenuList from "./MenuList";
 
 const useStyles = makeStyles({
     list: {
         width: 250,
     }
 });
+
+const venuesLinks = [{
+    text: 'Главклуб',
+    href: '/glavclub',
+    icon: <WhatshotIcon style={{color: 'red'}}/>,
+}];
 
 const topLinks = [{
         text: 'Сегодня',
@@ -33,7 +40,6 @@ const topLinks = [{
 const bottomLinks = [{
         text: 'Rock',
         href: '/rock',
-        icon: <WhatshotIcon style={{color: 'red'}}/>,
     },{
         text: 'Rap & Hip-Hop',
         href: '/rap',
@@ -53,17 +59,11 @@ const bottomLinks = [{
 const Menu = props => {
     const classes = useStyles();
     return (<div className={classes.list}>
-        <List>
-            {topLinks.map(({text, href, icon}) => (
-                <MenuItem text={text} href={href} icon={icon} />
-            ))}
-        </List>
+        <MenuList items={venuesLinks} />
         <Divider />
-        <List>
-            {bottomLinks.map(({text, href, icon}) => (
-                <MenuItem text={text} href={href} icon={icon} />
-            ))}
-        </List>
+        <MenuList items={topLinks} />
+        <Divider/>
+        <MenuList items={bottomLinks} />
     </div>)
 };
 
