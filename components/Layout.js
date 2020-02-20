@@ -8,12 +8,30 @@ import Alert from "@material-ui/core/Collapse";
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
+import { makeStyles } from '@material-ui/core/styles';
+
 const layoutStyle = {
     display: "flex",
     flexDirection: "column",
     height: "100%",
     width: "100%"
 };
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        padding: theme.spacing(1),
+        overflow: 'hidden',
+        [theme.breakpoints.down('sm')]: {
+            // backgroundColor: theme.palette.secondary.main,
+        },
+        [theme.breakpoints.up('md')]: {
+            // backgroundColor: theme.palette.primary.main,
+        },
+        [theme.breakpoints.up('lg')]: {
+            // backgroundColor: green[500],
+        },
+    },
+}));
 
 const contentStyle = {
     flex: 1,
@@ -22,6 +40,8 @@ const contentStyle = {
 };
 
 const Layout = props => {
+
+    const classes = useStyles();
 
     const [state, setState] = React.useState({
         menuOpened: false,
@@ -49,7 +69,7 @@ const Layout = props => {
         <Drawer anchor={"left"} open={state.menuOpened}>
             <Menu/>
         </Drawer>
-        <div className="Content">
+        <div className={classes.root}>
             {props.children}
         </div>
         <Footer/>

@@ -1,3 +1,4 @@
+import React from 'react';
 import axios from 'axios';
 import config from '../../config';
 import Layout from "../../components/Layout";
@@ -6,6 +7,7 @@ const { api_url } = config;
 import Head from "next/head";
 
 import EventCard from "../../components/EventCard";
+const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
 const Post = props => {
 
@@ -31,6 +33,8 @@ const Post = props => {
             <Typography variant="h3" component="h1" gutterBottom>
                 {isConcert && 'Концерт '}{name} в Москве
             </Typography>
+            <img src={event.image || '/cm.png'} style={{width: '100%', maxWidth: 500, float: 'left', height: 'auto', marginLeft: 10, marginRight: 10}}/>
+            <Typography component={'div'} variant={'body1'}>{((typeof window !== 'undefined') || (event.SSR)) && renderHTML(event.description.replace(event.name, `<b>${event.name}</b>`)) || ''}</Typography>
             <Typography variant="h5" component="h2" gutterBottom>
                 Стоимость билетов на {isConcert && 'концерт '}{name} в {event.venue.name}:
             </Typography>
@@ -39,7 +43,6 @@ const Post = props => {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
-                hour: 'numeric',
                 // minute: 'numeric',
                 timeZone: 'Europe/Moscow'
             })} <b>цена билета</b> {
@@ -49,7 +52,7 @@ const Post = props => {
             </Typography>
 
 
-            {JSON.stringify(event)}
+            {/*{JSON.stringify(event)}*/}
         </Layout>
     );
 };
