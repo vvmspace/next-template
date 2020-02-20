@@ -26,6 +26,8 @@ const Post = props => {
         timeZone: 'Europe/Moscow'
     });
 
+    const goPnm = event => () => (typeof window !== 'undefined') && window.open(event.url + '?promote=concertmoscow') || (() => {});
+
     return (
         <Layout>
             <Head>
@@ -51,7 +53,7 @@ const Post = props => {
                 && (<>составляет <b>{event.min_price}₽</b></>)
                 || (<>находится в диапазоне от <b>{event.min_price}</b> ₽ до <b>{event.max_price}</b> ₽</>)}
             </Typography>
-            <Button variant="contained" color="primary" href={`${event.url}?promote=concertmoscow`}>
+            <Button variant="contained" color="primary" onClick={goPnm(event)}>
                 Купить билет
             </Button>
 
