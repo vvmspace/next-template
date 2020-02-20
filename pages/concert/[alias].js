@@ -54,7 +54,6 @@ const Post = props => {
             <Button variant="contained" color="primary" href={event.url}>
                 Купить билет
             </Button>
-Нщг
 
             {/*{JSON.stringify(event)}*/}
         </Layout>
