@@ -1,11 +1,8 @@
 import 'react';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ArrowRight from '@material-ui/icons/ArrowRight';
 import { makeStyles } from '@material-ui/core/styles';
+import WhatshotIcon from '@material-ui/icons/Whatshot';
 
 import MenuItem from "./MenuItem";
 
@@ -36,8 +33,9 @@ const topLinks = [{
 const bottomLinks = [{
         text: 'Rock',
         href: '/rock',
+        icon: <WhatshotIcon color={'red'}/>,
     },{
-        text: 'Rap',
+        text: 'Rap & Hip-Hop',
         href: '/rap',
     },{
         text: 'Pop',
@@ -51,18 +49,19 @@ const bottomLinks = [{
     },
 ];
 
+
 const Menu = props => {
     const classes = useStyles();
     return (<div className={classes.list}>
         <List>
-            {topLinks.map(({text, href}) => (
-                <MenuItem text={text} href={href} />
+            {topLinks.map(({text, href, icon}) => (
+                <MenuItem text={text} href={href} icon={icon} />
             ))}
         </List>
         <Divider />
         <List>
-            {bottomLinks.map(({text, href}) => (
-                <MenuItem text={text} href={href} />
+            {bottomLinks.map(({text, href, icon}) => (
+                <MenuItem text={text} href={href} icon={icon} />
             ))}
         </List>
     </div>)
