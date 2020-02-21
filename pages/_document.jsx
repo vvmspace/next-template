@@ -1,16 +1,10 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/styles';
+import config from '../config';
 
-const theme = responsiveFontSizes(createMuiTheme({
-  palette: {
-    primary: {
-      main: '#448b00',
-    }
-  }
-}))
+const theme = config.theme;
 
 class MyDocument extends Document {
   render() {

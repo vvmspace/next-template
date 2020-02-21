@@ -14,6 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import config from "../config";
 
 const useStyles = makeStyles(theme => ({
     grow: {
@@ -81,7 +82,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function PrimarySearchAppBar(props) {
-    const classes = useStyles();
+    const classes = useStyles(config.theme);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
