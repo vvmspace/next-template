@@ -38,26 +38,44 @@ const Post = props => {
             <Typography variant="h3" component="h1" gutterBottom>
                 {isConcert && 'Концерт '}{name} в Москве
             </Typography>
-            <img src={event.image || '/cm.png'} style={{width: '100%', maxWidth: 500, float: 'left', height: 'auto', marginLeft: 10, marginRight: 10}}/>
-            <Typography component={'div'} variant={'body1'}>{((typeof window !== 'undefined') || (event.SSR)) && renderHTML(event.description.replace(event.name, `<b>${event.name}</b>`)) || ''}</Typography>
-            <Typography variant="h5" component="h2" gutterBottom>
-                Стоимость билетов на {isConcert && 'концерт '}{name} в {event.venue.name}:
-            </Typography>
-            <Typography variant="subtitle2" component="p" gutterBottom>
-                По данным от {new Date(event.updatedAt).toLocaleString('ru', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                // minute: 'numeric',
-                timeZone: 'Europe/Moscow'
-            })} <b>цена билета</b> {
-                (event.min_price === event.max_price)
-                && (<>составляет <b>{event.min_price}₽</b></>)
-                || (<>находится в диапазоне от <b>{event.min_price}</b> ₽ до <b>{event.max_price}</b> ₽</>)}
-            </Typography>
-            <Button variant="contained" color="primary" onClick={goPnm(event)}>
-                Купить билет
-            </Button>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        <img src={event.image && event.image.replace('218x161', '654x483') || '/cm.png'} style={{width: '100%', height: 'auto'}} />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        <Typography variant="h5" component="h2" gutterBottom align={'justify'}>
+                            Место проведения {isConcert && 'концерта '}{name} в Москве:
+                        </Typography>
+                        <Typography variant="subtitle2" component="p" gutterBottom>
+                            <a href={`/${event.venue.alias}`}>{event.venue.name}</a>, {event.venue.address}
+                        </Typography>
+                        <Typography variant="h5" component="h2" gutterBottom align={'justify'}>
+                            Стоимость билетов на {isConcert && 'концерт '}{name} в {event.venue.name}:
+                        </Typography>
+                        <Typography variant="subtitle2" component="p" gutterBottom>
+                            По данным от {new Date(event.updatedAt).toLocaleString('ru', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                            // minute: 'numeric',
+                            timeZone: 'Europe/Moscow'
+                        })} <b>цена билета</b> {
+                            (event.min_price === event.max_price)
+                            && (<>составляет <b>{event.min_price}₽</b></>)
+                            || (<>находится в диапазоне от <b>{event.min_price}</b> ₽ до <b>{event.max_price}</b> ₽</>)}
+                        </Typography>
+                        <div align={'right'} style={{paddingTop: 20}}>
+                            <Button variant="contained" color="primary" onClick={goPnm(event)}>
+                                Купить билет от {event.min_price} ₽
+                            </Button>
+                        </div>
+                    </Grid>
+                    <Grid item xs={12} xl={12}>
+                        <Typography align={'justify'} component={'div'} variant={'body1'}>{((typeof window !== 'undefined') || (event.SSR)) && renderHTML(event.description.replace(event.name, `<b>${event.name}</b>`)) || ''}</Typography>
+                    </Grid>
+
+                </Grid>
+
             </Container>
             {/*{JSON.stringify(event)}*/}
         </Layout>
