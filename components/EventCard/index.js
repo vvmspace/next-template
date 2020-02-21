@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -8,18 +8,22 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import A from '../A';
+import config from "../../config";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
-        maxWidth: 345,
+        // maxWidth: 345,
     },
     media: {
         height: 140,
     },
-});
+    button: {
+        color: theme.palette.primary.main,
+    }
+}));
 
 const EventCard = props => {
-    const classes = useStyles();
+    const classes = useStyles(config.theme);
 
     const {event, showVenue} = props;
 
@@ -59,10 +63,10 @@ const EventCard = props => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary" onClick={goPnm(event)}>
+                <Button size="small" style={{color: config.theme.palette.primary.main}} onClick={goPnm(event)}>
                     Билеты {(event.max_price !== event.min_price) && `от ${event.min_price} ₽` || `по ${event.min_price} ₽`}
                 </Button>
-                <Button size="small" color="primary" href={link}>
+                <Button size="small" style={{color: config.theme.palette.primary.main}} href={link}>
                     Подробнее
                 </Button>
             </CardActions>
