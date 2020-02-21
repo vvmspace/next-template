@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "kill-port 3000 && next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "kill-port 3000 && NODE_ICU_DATA=./node_modules/full-icu API_URL=https://api.concert.moscow next",
+    "build": "NODE_ICU_DATA=./node_modules/full-icu API_URL=https://api.concert.moscow next build",
+    "start": "NODE_ICU_DATA=./node_modules/full-icu API_URL=https://api.concert.moscow next start"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "@material-ui/core": "^4.9.3",
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.0",
+    "full-icu": "^1.3.0",
     "kill-port": "^1.6.0",
     "next": "^9.2.1",
     "react": "^16.12.0",
