@@ -13,6 +13,7 @@ import config from "../../config";
 const useStyles = makeStyles(theme => ({
     root: {
         // maxWidth: 345,
+
     },
     media: {
         height: 140,

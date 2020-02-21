@@ -36,8 +36,8 @@ const Post = props => {
                 Концерты в Москве
             </Typography>
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
-                    <a className={classes.link} href={'/weekends'}>На этих выходных</a> Это слайдер!
-                    </Typography>
+                    <a className={classes.link} href={'/weekends'}>На этих выходных</a>
+                    </Typography>fi
                     <EventCardList sliding={true} events={weekends.slice(6)} showVenue={true} />
                     <Divider/>
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
