@@ -70,7 +70,7 @@ const EventCard = props => {
                     {showVenue
                      && (<Typography gutterBottom variant="subtitle2" component="p" className={classes.venueName}><A href={`/${event.venue.alias}`}>{event.venue.name}</A></Typography>)}
                     <Typography gutterBottom variant="subtitle1" component="p">
-                        {pretty_date}, {event.age}+
+                        {pretty_date}{(event.age > 0) && `, ${event.age}+`}
                     </Typography>
                 </CardContent>
             </CardActionArea>
