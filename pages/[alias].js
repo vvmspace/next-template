@@ -14,7 +14,9 @@ const Post = props => {
     const { name, address, events } = venue;
 
     const sorted = {
-        events: events.sort(
+        events: events
+            .filter(event => new Date(event.date) > new Date())
+            .sort(
             (event1, event2) =>
             (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
     };
