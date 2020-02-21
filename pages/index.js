@@ -48,7 +48,7 @@ const Post = props => {
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
                         <A className={classes.link} href={'/top'}>Top</A>
                     </Typography>
-                    <EventCardList events={top.slice(0,6)} showVenue={true} />
+                    <EventCardList sliding={true} events={top.slice(0,6)} showVenue={true} />
             <Divider/>
         </Layout>
     );
