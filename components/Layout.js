@@ -7,6 +7,7 @@ import Collapse from "@material-ui/core/Collapse";
 import Alert from "@material-ui/core/Collapse";
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import Slider from './Slider';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -71,6 +72,7 @@ const Layout = props => {
         </Drawer>
         <div className={classes.root}>
             {props.children}
+            <Slider elements={[<div style={{width: '100%', height: 200}}>1</div>,<div style={{width: '100%', height: 200}}>2</div>]}/>
         </div>
         <Footer/>
     </div>
