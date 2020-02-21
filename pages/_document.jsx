@@ -17,6 +17,7 @@ class MyDocument extends Document {
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="yandex-verification" content="49bfd7f564259818" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
