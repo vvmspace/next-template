@@ -8,7 +8,7 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import A from '../components/A';
 import EventCard from "../components/EventCard";
 import EventCardList from "../components/EventCardList";
 
@@ -24,49 +24,18 @@ const Post = props => {
             <Typography gutterBottom variant="h3" component="h1">
                 Концерты в Москве
             </Typography>
-            <ExpansionPanel>
-                <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                >
                     <Typography gutterBottom variant="h4" component="h2">
-                    На этих выходных
+                    <A href={'/weekends'}>На этих выходных</A>
                     </Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <EventCardList events={weekends} showVenue={true} />
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel>
-                <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                >
+                    <EventCardList events={weekends.slice(6)} showVenue={true} />
                     <Typography gutterBottom variant="h4" component="h2">
-                    На этой неделе
+                        <A href={'/weekly'}>На этой неделе</A>
                     </Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <EventCardList events={weekly} showVenue={true} />
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
-
-            <ExpansionPanel>
-                <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                >
+                    <EventCardList events={weekly.slice(0,6)} showVenue={true} />
                     <Typography gutterBottom variant="h4" component="h2">
-                    Top-30
+                        <A href={'/top'}>Top</A>
                     </Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                    <EventCardList events={top} showVenue={true} />
-                </ExpansionPanelDetails>
-            </ExpansionPanel>
+                    <EventCardList events={top.slice(0,6)} showVenue={true} />
         </Layout>
     );
 };
