@@ -36,14 +36,14 @@ const Post = props => {
                 Концерты в Москве
             </Typography>
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
-                    <a className={classes.link} href={'/weekends'}>На этих выходных</a>
+                    <a className={classes.link} href={'/weekends'}>На этих выходных</a> Это слайдер!
                     </Typography>
-                    <EventCardList events={weekends.slice(6)} showVenue={true} />
+                    <EventCardList sliding={true} events={weekends.slice(6)} showVenue={true} />
                     <Divider/>
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
                         <a className={classes.link} href={'/weekly'}>На этой неделе</a>
                     </Typography>
-                    <EventCardList events={weekly.slice(0,6)} showVenue={true} />
+                    <EventCardList sliding={true} events={weekly.slice(0,6)} showVenue={true} />
                     <Divider/>
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
                         <A className={classes.link} href={'/top'}>Top</A>
