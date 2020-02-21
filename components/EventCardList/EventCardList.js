@@ -8,7 +8,7 @@ const EventCardList = props => {
     const {events, showVenue} = props;
 
     return (<>
-        <Hidden only="xs">
+        <Hidden only={props.sliding && 'xs' || []}>
             <Grid container spacing={1}>{events
                 .sort((event1, event2) => (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
                 .map(event => (
@@ -16,7 +16,7 @@ const EventCardList = props => {
                                                                               key={event.uuid}/></Grid>))}
             </Grid>
         </Hidden>
-        <Hidden only={['sm', 'md', 'lg', 'xl']}>
+        <Hidden only={props.sliding && 'xs' && [] || ['xs','sm','md','lg','xl']}>
             <Slider elements={events.map(event => (<EventCard showVenue={showVenue} event={event}
                                                               key={event.uuid}/>))}/>
         </Hidden>
