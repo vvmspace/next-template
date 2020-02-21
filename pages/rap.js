@@ -9,7 +9,7 @@ const attrs = {
 
 const Rap = props => (<GenrePage events={props.events} attrs={attrs}/>);
 
-Pop.getInitialProps = async function() {
+Rap.getInitialProps = async function() {
 
     const res = await axios.get(`https://api.concert.moscow/api/v1/event/rap`).catch(e => log(e));
 
