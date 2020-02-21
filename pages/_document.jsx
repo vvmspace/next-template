@@ -2,6 +2,7 @@ import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
+import { ThemeProvider } from '@material-ui/styles';
 
 const theme = responsiveFontSizes(createMuiTheme({
   palette: {
@@ -47,7 +48,9 @@ class MyDocument extends Document {
           </style>
         </Head>
         <body>
-          <Main />
+          <ThemeProvider theme={theme}>
+            <Main />
+          </ThemeProvider>
           <NextScript />
         </body>
       </Html>

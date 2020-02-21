@@ -1,5 +1,5 @@
 import React from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import {fade, makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -18,6 +18,9 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 const useStyles = makeStyles(theme => ({
     grow: {
         flexGrow: 1,
+    },
+    theBar: {
+        backgroundColor: '#448b00',
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -165,7 +168,7 @@ export default function PrimarySearchAppBar(props) {
 
     return (
         <div className={classes.grow}>
-            <AppBar position="fixed">
+            <AppBar position="fixed" className={classes.theBar}>
                 <Toolbar>
                     <IconButton
                         edge="start"
