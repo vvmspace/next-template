@@ -15,6 +15,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import config from "../config";
+import A from "./A";
 
 const useStyles = makeStyles(theme => ({
     grow: {
@@ -181,7 +182,7 @@ export default function PrimarySearchAppBar(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography className={classes.title} variant="h6" noWrap>
-                        concert.moscow
+                        <A href={'/'} title={'concert.moscow - билеты на концерты в Москве без наценки и сервисного сбора'}>concert.moscow</A>
                     </Typography>
                     <div onClick={showSoon} className={classes.search}>
                         <div className={classes.searchIcon}>

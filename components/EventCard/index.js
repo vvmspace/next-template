@@ -19,6 +19,14 @@ const useStyles = makeStyles(theme => ({
     },
     button: {
         color: theme.palette.primary.main,
+    },
+    eventName: {
+        height: 64,
+        overflow: 'hidden',
+    },
+    venueName: {
+        height: 37,
+        overflow: 'hidden',
     }
 }));
 
@@ -52,12 +60,15 @@ const EventCard = props => {
                     title={`Концерт ${event.name} в Москве`}
                 /></A>
                 <CardContent>
-                    <Typography gutterBottom variant={"h5"} component="h2">
-                        <A href={link} title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{event && event.name && event.name.substr(0, 60)}</A>
+                    <Typography gutterBottom variant={"h5"} component="h2" className={classes.eventName}>
+                        <A
+                            href={link}
+                            title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{
+                                event && event.name && event.name.substr(0, 60).split(' и ')[0]}</A>
                     </Typography>
                     {showVenue
-                     && (<Typography gutterBottom variant="subtitle2" component="h2"><A href={`/${event.venue.alias}`}>{event.venue.name}</A></Typography>)}
-                    <Typography gutterBottom variant="subtitle1" component="h2">
+                     && (<Typography gutterBottom variant="subtitle2" component="p" className={classes.venueName}><A href={`/${event.venue.alias}`}>{event.venue.name}</A></Typography>)}
+                    <Typography gutterBottom variant="subtitle1" component="p">
                         {pretty_date}, {event.age}+
                     </Typography>
                 </CardContent>
