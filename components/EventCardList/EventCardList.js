@@ -16,6 +16,10 @@ const EventCardList = props => {
                                                                               key={event.uuid}/></Grid>))}
             </Grid>
         </Hidden>
+        <Hidden only={['sm', 'md', 'lg', 'xl']}>
+            <Slider elements={events.map(event => (<EventCard showVenue={showVenue} event={event}
+                                                              key={event.uuid}/>))}/>
+        </Hidden>
     </>);
 }
 
