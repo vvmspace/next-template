@@ -1,4 +1,4 @@
-import Drawer from '@material-ui/core/Drawer';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import React from 'react';
 import NavBar from "./NavBar";
 import Menu from './Menu';
@@ -66,9 +66,9 @@ const Layout = props => {
     return (
     <div onClick={closeMenu}>
         <NavBar menuToggler={openMenu} />
-        <Drawer anchor={"left"} open={state.menuOpened}>
+        <SwipeableDrawer anchor={"left"} open={state.menuOpened} onOpen={e =>e } onClose={e =>e }>
             <Menu/>
-        </Drawer>
+        </SwipeableDrawer>
         <div className={classes.root}>
             {props.children}
         </div>
