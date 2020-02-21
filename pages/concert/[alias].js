@@ -1,9 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import config from '../../config';
+import { api_url } from '../../config';
 import Layout from "../../components/Layout";
 import { Typography, Grid } from '@material-ui/core';
-const { api_url } = config;
 import Head from "next/head";
 import Button from "@material-ui/core/Button";
 
