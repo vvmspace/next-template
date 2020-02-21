@@ -1,13 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-import { api_url } from '../../config';
+import config from '../../config';
 import Layout from "../../components/Layout";
 import { Typography, Grid } from '@material-ui/core';
 import Head from "next/head";
 import Button from "@material-ui/core/Button";
 
 import EventCard from "../../components/EventCard";
+import Container from "@material-ui/core/Container";
 const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+const { api_url } = config;
 
 const Post = props => {
 
@@ -32,6 +34,7 @@ const Post = props => {
             <Head>
                 <title>Концерты {event.name} в Москве {date_formatted}</title>
             </Head>
+            <Container>
             <Typography variant="h3" component="h1" gutterBottom>
                 {isConcert && 'Концерт '}{name} в Москве
             </Typography>
@@ -55,7 +58,7 @@ const Post = props => {
             <Button variant="contained" color="primary" onClick={goPnm(event)}>
                 Купить билет
             </Button>
-
+            </Container>
             {/*{JSON.stringify(event)}*/}
         </Layout>
     );
