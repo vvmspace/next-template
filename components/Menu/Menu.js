@@ -25,10 +25,10 @@ const topLinks = [/*{
     },{
         text: 'Завтра',
         href: '/tomorrow',
-    },*/{
+    },*//*{
         text: 'На выходных',
         href: '/weekends',
-    },{
+    },*/{
         text: 'Неделя',
         href: '/weekly',
     },{
