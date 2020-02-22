@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import { Typography, Grid } from '@material-ui/core';
 import Head from "next/head";
 import Button from "@material-ui/core/Button";
+import YandexShare from 'react-yandex-share';
 
 import EventCard from "../../components/EventCard";
 import Container from "@material-ui/core/Container";
@@ -44,7 +45,7 @@ const Post = props => {
             </Typography>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                        <img src={event.image && event.image.replace('218x161', '654x483') || '/cm.png'} style={{width: '100%', height: 'auto'}} />
+                        <img src={event.image && event.image.replace('218x161', '654x483') || '/cm.png'} style={{width: '100%', height: 'auto'}} /> <YandexShare/>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                         <Typography variant="h5" component="h2">{name} {date_formatted}</Typography>
