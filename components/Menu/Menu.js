@@ -1,11 +1,14 @@
 import 'react';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import BatteryChargingFullIcon from '@material-ui/icons/BatteryChargingFull';
 import MenuItem from "./MenuItem";
 import MenuList from "./MenuList";
+import A from '../A';
 
 const useStyles = makeStyles({
     list: {
@@ -55,7 +58,8 @@ const bottomLinks = [{
     },*/{
         text: 'Electro',
         href: '/electro',
-        icon: <BatteryChargingFullIcon style={{color: 'red'}} />
+        icon: <BatteryChargingFullIcon style={{color: 'red'}}/>,
+        style: {background: '#448b00', color: 'white', fontWeight: 'bold'}
     },
 ];
 
@@ -63,6 +67,10 @@ const bottomLinks = [{
 const Menu = props => {
     const classes = useStyles();
     return (<div className={classes.list}>
+        <List><A href={'/'}><ListItem button key={props.text}>
+            <img style={{height: 24, marginTop: 2, marginBottom: 2, marginRight: 32}} src='/favicon.ico'/><ListItemText style={{fontWeight: 'bold'}} primary={(<>concert<span style={{color: '#448b00'}}>.moscow</span></>)} />
+        </ListItem></A></List>
+        <Divider />
         <MenuList items={venuesLinks} />
         <Divider />
         <MenuList items={topLinks} />
