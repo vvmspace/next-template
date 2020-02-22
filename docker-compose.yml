@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  front:
+    image: cm/front
+    build: .
+    restart: always
+    environment:
+      API_URL: https://api.concert.moscow
+    ports:
+      - 3001:3000
