@@ -3,7 +3,7 @@ import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import { makeStyles } from '@material-ui/core/styles';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
-
+import BatteryChargingFullIcon from '@material-ui/icons/BatteryChargingFull';
 import MenuItem from "./MenuItem";
 import MenuList from "./MenuList";
 
@@ -19,13 +19,13 @@ const venuesLinks = [{
     icon: <WhatshotIcon style={{color: 'red'}}/>,
 }];
 
-const topLinks = [{
+const topLinks = [/*{
         text: 'Сегодня',
         href: '/today',
     },{
         text: 'Завтра',
         href: '/tomorrow',
-    },{
+    },*/{
         text: 'На выходных',
         href: '/weekends',
     },{
@@ -46,12 +46,16 @@ const bottomLinks = [{
     },{
         text: 'Pop',
         href: '/pop',
-    },{
+    },/*{
         text: 'Jazz',
         href: '/jazz',
     },{
         text: 'Акустика',
         href: '/acoustic',
+    },*/{
+        text: 'Electro',
+        href: '/electro',
+        icon: <BatteryChargingFullIcon style={{color: 'red'}} />
     },
 ];
 
