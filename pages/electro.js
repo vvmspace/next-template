@@ -3,8 +3,10 @@ import axios from "axios";
 
 const attrs = {
     title: 'Электронная музыка',
-    variations: ['рэп', 'rap'],
+    variations: ['Electro', 'elec'],
     keywords: ['rap', 'рэп', 'hip-hop', 'хип-хоп'],
+    description: 'Купить билеты на концерты и фестивали электронной музыки в Москве',
+    rp: 'электронной музыки',
 };
 
 const Rap = props => (<GenrePage events={props.events} attrs={attrs}/>);

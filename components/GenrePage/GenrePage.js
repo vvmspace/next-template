@@ -12,8 +12,8 @@ export default props => {
         </Head>
         {/*{JSON.stringify(props)}*/}
         <Typography variant={'h3'} component={'h1'}>{attrs.title} в Москве {new Date().getFullYear()}</Typography>
-        <Typography variant={'subtitle1'} component={'p'}>{attrs.subtitle || `Купить билеты на ${attrs.title.toLowerCase()} без наценки и сервисного сбора`}</Typography>
+        <Typography variant={'subtitle1'} component={'p'}>{attrs.subtitle || attrs.description || `Купить билеты на ${attrs.rp || attrs.title.toLowerCase()} без наценки и сервисного сбора`}</Typography>
         <Typography variant={'body1'} component={'p'}>{attrs.body || ''}</Typography>
-        <EventCardList events={events}/>
+        <EventCardList showVenue events={events}/>
     </Layout>);
 }

@@ -22,6 +22,10 @@ const Post = props => {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
+        timeZone: 'Europe/Moscow'
+    });
+
+    const start_time = new Date(event.date).toLocaleString('ru', {
         hour: 'numeric',
         minute: 'numeric',
         timeZone: 'Europe/Moscow'
@@ -32,7 +36,7 @@ const Post = props => {
     return (
         <Layout>
             <Head>
-                <title>Концерты {event.name} в Москве {date_formatted}</title>
+                <title>{isConcert && 'Концерт '}{event.name} в Москве {date_formatted} | concert.moscow - купить билеты без наценки и сервисного сбора</title>
             </Head>
             <Container>
             <Typography variant="h3" component="h1" gutterBottom>
@@ -43,6 +47,9 @@ const Post = props => {
                         <img src={event.image && event.image.replace('218x161', '654x483') || '/cm.png'} style={{width: '100%', height: 'auto'}} />
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                        <Typography variant="h5" component="h2">{name} {date_formatted}</Typography>
+                        <Typography variant="subtitle2" component="p">Начало {isConcert && 'концерта' || 'мероприятия'}: {start_time}</Typography>
+                        {(event.age > 0) && (<Typography variant="subtitle2" component="p">Возрастное ограничение: {event.age}+</Typography>)}
                         <Typography variant="h5" component="h2" gutterBottom align={'justify'}>
                             Место проведения {isConcert && 'концерта '}{name} в Москве:
                         </Typography>
