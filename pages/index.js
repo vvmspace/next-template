@@ -41,11 +41,12 @@ const Post = props => {
                     </Typography>
                     <EventCardList sliding={true} events={weekends.slice(6)} showVenue={true} />
                     <Divider/></>)}
+                    {(weekly.length > 0) && (<>
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
                         <a className={classes.link} href={'/weekly'}>На этой неделе</a>
                     </Typography>
                     <EventCardList sliding={true} events={weekly.slice(0,6)} showVenue={true} />
-                    <Divider/>
+                    <Divider/></>)}
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
                         <A className={classes.link} href={'/top'}>Top</A>
                     </Typography>
