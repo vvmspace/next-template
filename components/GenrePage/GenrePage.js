@@ -6,7 +6,7 @@ import Head from 'next/head';
 export default props => {
     const {attrs, events} = props;
 
-    const withSSR = events.filter(event => event.SSR);
+    const withSSR = events.filter(event => event.ssr);
 
     return (<Layout>
         <Head>

@@ -83,7 +83,7 @@ const Post = props => {
                     </Grid>
                     <Grid item xs={12} xl={12}>
                         <Typography align={'justify'} component={'div'} variant={'body1'}>{
-                            ((typeof window !== 'undefined') || (event.SSR)) && renderHTML(event.description
+                            ((typeof window !== 'undefined') || (event.ssr)) && renderHTML(event.description
                                 .replace(event.name, `<b>${event.name}</b>`)
                                 .replace('ponominalu.ru', '<a href="https://concert.moscow/">concert.moscow</a>')) || ''}</Typography>
                     </Grid>
