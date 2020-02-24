@@ -19,6 +19,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content={theme.palette.primary.main} />
           <meta name="yandex-verification" content="49bfd7f564259818" />
           <meta name="yandex-verification" content="777567ba191dc3ec" />
+          <meta name="google-site-verification" content="KEXv5KCjyzyTbPFuN-ts2cxNDYWecO3iuBkR2MqIQhg" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
