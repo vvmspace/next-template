@@ -47,6 +47,7 @@ class MyDocument extends Document {
         <body>
           <ThemeProvider theme={theme}>
             <Main />
+
           </ThemeProvider>
           <NextScript />
         </body>
