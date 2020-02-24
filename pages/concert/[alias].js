@@ -37,13 +37,13 @@ const Post = props => {
     return (
         <Layout>
             <Head>
-                <title>{isConcert && 'Концерт '}{event.name} в Москве {date_formatted} | concert.moscow - купить билеты без наценки и сервисного сбора</title>
-                <meta httpEquiv={'description'} content={`Купить билеты на ${isConcert && 'концерт '}${event.name} в ${event.venue.name}  без наценки и сервисного сбора`}/>
+                <title>{isConcert && 'Концерт ' || ''}{event.name} в Москве {date_formatted} | concert.moscow - купить билеты без наценки и сервисного сбора</title>
+                <meta httpEquiv={'description'} content={`Купить билеты на ${isConcert && 'концерт ' || ''}${event.name} в ${event.venue.name}  без наценки и сервисного сбора`}/>
                 <meta httpEquiv={'keywords'} content={`${event.name} в ${event.venue.name}, ${event.name} в Москве, ${event.name} ${date_formatted}, ${event.name}`}/>
             </Head>
             <Container>
             <Typography variant="h3" component="h1" gutterBottom>
-                {isConcert && 'Концерт '}{name} в Москве
+                {isConcert && 'Концерт ' || ''}{name} в Москве
             </Typography>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -54,13 +54,13 @@ const Post = props => {
                         <Typography variant="subtitle2" component="p">Начало {isConcert && 'концерта' || 'мероприятия'}: {start_time}, подходите заблаговременно</Typography>
                         {(event.age > 0) && (<Typography variant="subtitle2" component="p">Возрастное ограничение: {event.age}+</Typography>)}
                         <Typography variant="h5" component="h2" gutterBottom align={'justify'}>
-                            Место проведения {isConcert && 'концерта '}{name} в Москве:
+                            Место проведения {isConcert && 'концерта ' || ''}{name} в Москве:
                         </Typography>
                         <Typography variant="subtitle2" component="p" gutterBottom>
                             <a href={`/${event.venue.alias}`}>{event.venue.name}</a>, {event.venue.address}
                         </Typography>
                         <Typography variant="h5" component="h2" gutterBottom align={'justify'}>
-                            Стоимость билетов на {isConcert && 'концерт '}{name} в {event.venue.name}:
+                            Стоимость билетов на {isConcert && 'концерт ' || ''}{name} в {event.venue.name}:
                         </Typography>
                         <Typography variant="subtitle2" component="p" gutterBottom>
                             По данным от {new Date(event.updatedAt).toLocaleString('ru', {

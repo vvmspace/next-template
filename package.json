@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "kill-port 3000 && NODE_ICU_DATA=./node_modules/full-icu API_URL=https://api.concert.moscow next",
-    "build": "NODE_ICU_DATA=./node_modules/full-icu API_URL=https://api.concert.moscow next build",
-    "start": "NODE_ICU_DATA=./node_modules/full-icu API_URL=https://api.concert.moscow next start"
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
