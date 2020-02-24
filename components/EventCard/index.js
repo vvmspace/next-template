@@ -60,17 +60,18 @@ const EventCard = props => {
                     image={event.image || '/cm.png'}
                     title={`Концерт ${event.name} в Москве`}
                 /></A>
-                <CardContent>
+                <CardContent itemscope itemtype="http://schema.org/Event">
                     <Typography gutterBottom variant={"h5"} component="h2" className={classes.eventName}>
                         <A
+                            itemprop="name"
                             href={link}
                             title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{
                                 event && event.name && event.name.substr(0, 60).split(' и ')[0]}</A>
                     </Typography>
                     {showVenue
-                     && (<Typography gutterBottom variant="subtitle2" component="p" className={classes.venueName}><A href={`/${event.venue.alias}`}>{event.venue.name}</A></Typography>)}
+                     && (<Typography gutterBottom variant="subtitle2" component="p"  itemprop="location" itemscope itemtype="http://schema.org/Place" className={classes.venueName}><A itemprop="name" href={`/${event.venue.alias}`}>{event.venue.name}</A></Typography>)}
                     <Typography gutterBottom variant="subtitle1" component="p">
-                        {pretty_date}{(event.age > 0) && `, ${event.age}+`}
+                        <span itemprop="startDate">{pretty_date}</span>{(event.age > 0) && `, ${event.age}+`}
                     </Typography>
                 </CardContent>
             </CardActionArea>
