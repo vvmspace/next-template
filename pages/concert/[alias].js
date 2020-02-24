@@ -40,6 +40,7 @@ const Post = props => {
                 <title>{isConcert && 'Концерт ' || ''}{event.name} в Москве {date_formatted} | concert.moscow - купить билеты без наценки и сервисного сбора</title>
                 <meta httpEquiv={'description'} content={`Купить билеты на ${isConcert && 'концерт ' || ''}${event.name} в ${event.venue.name}  без наценки и сервисного сбора`}/>
                 <meta httpEquiv={'keywords'} content={`${event.name} в ${event.venue.name}, ${event.name} в Москве, ${event.name} ${date_formatted}, ${event.name}`}/>
+                <link rel={'canonical'} href={`https://concert.moscow/concert/${event.alias || event.uuid}`} />
             </Head>
             <Container>
             <Typography variant="h3" component="h1" gutterBottom>
