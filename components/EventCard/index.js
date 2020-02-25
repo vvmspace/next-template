@@ -64,6 +64,7 @@ const EventCard = props => {
         "@type": "Event",
         name: event.name,
         startDate: event.date,
+        endDate: new Date(event.end_date).toISOString().split('T')[0],
         location: {
             "@type": "Place",
             name: event.venue.name,
