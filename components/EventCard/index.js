@@ -72,6 +72,13 @@ const EventCard = props => {
             streetAddress: event.venue.address,
                 addressLocality: 'Moscow',
                 addressRegion: 'Moscow region'
+        },
+        offers: {
+            "@type": "Offer",
+            description: "без наценки и сервисного сбора",
+            url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
+            price: event.min_price,
+            priceCurrency : "RUB",
         }
     },
     url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
