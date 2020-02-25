@@ -2,7 +2,6 @@ import 'react';
 import Grid from '@material-ui/core/Grid';
 import EventCard from '../EventCard';
 import Slider from "../Slider";
-import Hidden from "@material-ui/core/Hidden";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
