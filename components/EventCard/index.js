@@ -80,6 +80,8 @@ const EventCard = props => {
         url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
         price: event.min_price,
         priceCurrency : "RUB",
+        availability: event.has_eticket && (new Date() < new Date(event.date)),
+        validFrom: new Date(event.updatedAt).toISOString(),
     },
     url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
     description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`
