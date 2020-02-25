@@ -5,14 +5,15 @@ import EventCardList from "../components/EventCardList";
 import { Typography, Grid, Divider } from '@material-ui/core';
 const { api_url } = config;
 import Head from "next/head";
+import { titleCase } from "title-case";
 
 import EventCard from "../components/EventCard";
 
 const Post = props => {
 
     const { venue } = props;
-    const { name, address, events } = venue;
-
+    const { name:_name, address, events } = venue;
+    const name = titleCase(_name);
     const sorted = {
         events: events
             .filter(event => new Date(event.date) > new Date())
