@@ -78,6 +78,9 @@ const EventCard = props => {
     description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`
     }
 
+    if (event.image) {
+        jevent.image = event.image;
+    }
     return (
         <Card className={classes.root} style={{width: '100%'}}>
             {renderHTML(`<script type='application/ld+json'>${JSON.stringify(jevent)}</script>`)}
