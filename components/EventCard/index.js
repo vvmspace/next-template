@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import A from '../A';
 import config from "../../config";
 import { EventJsonLd } from "next-seo";
+const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -58,8 +59,28 @@ const EventCard = props => {
 
     const goPnm = event => () => (typeof window !== 'undefined') && window.open(event.url + '?promote=concertmoscow') || (() => {});
 
+    const jevent = {
+        "@context": "https://www.schema.org",
+        "@type": "Event",
+        name: event.name,
+        startDate: event.date,
+        location: {
+            "@type": "Place",
+            name: event.venue.name,
+            sameAs: `https://concert.moscow/${event.venue.alias}`,
+            address: {
+            streetAddress: event.venue.address,
+                addressLocality: 'Moscow',
+                addressRegion: 'Moscow region'
+        }
+    },
+    url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
+    description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`
+    }
+
     return (
         <Card className={classes.root} style={{width: '100%'}}>
+            {renderHTML(`<script type='application/ld+json'>${JSON.stringify(jevent)}</script>`)}
             <EventJsonLd
                 name={event.name}
                 startDate={event.date}
