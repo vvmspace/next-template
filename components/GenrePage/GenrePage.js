@@ -18,7 +18,7 @@ export default props => {
     const classes = useStyles();
     return (<Layout>
         <Head>
-            <title>{attrs.full_title} | concert.moscow - билеты на самые ожидаемые концерты в Москве {new Date().getFullYear()} без наценки и сервисного сбора</title>
+            <title>{attrs.full_title || attrs.title} | concert.moscow - билеты на самые ожидаемые концерты в Москве {new Date().getFullYear()} без наценки и сервисного сбора</title>
         </Head>
         <Typography variant={'h3'} component={'h1'}>{attrs.full_title || (<>{attrs.title} в Москве {new Date().getFullYear()}</>)}</Typography>
         <Typography variant={'subtitle1'} component={'p'}>{attrs.subtitle || attrs.description || `Купить билеты на ${attrs.rp || attrs.title.toLowerCase()} без наценки и сервисного сбора`}</Typography>
