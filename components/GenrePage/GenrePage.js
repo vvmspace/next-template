@@ -4,8 +4,6 @@ import EventCardList from "../EventCardList";
 import Head from 'next/head';
 import { makeStyles } from "@material-ui/core/styles";
 
-const withSSR = events.filter(event => event.ssr);
-
 const useStyles = makeStyles({
     subTitle: {
         marginTop: 20,
@@ -15,6 +13,8 @@ const useStyles = makeStyles({
 
 export default props => {
     const {attrs, events} = props;
+    const withSSR = events.filter(event => event.ssr);
+
     const classes = useStyles();
     return (<Layout>
         <Head>
