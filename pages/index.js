@@ -31,6 +31,7 @@ const Post = props => {
         <Layout>
             <Head>
                 <title> concert.moscow - билеты на концерты в Москве без наценки и сервисного сбора</title>
+                <meta httpEquiv={'description'} content={'Анонсы. Подборки. Обзоры. Фестивали. Вечеринки. Rock. Rap. Акустика. Electro. Jazz. Есть всё.'} />
             </Head>
             <Typography gutterBottom variant="h3" component="h1">
                 Концерты в Москве
