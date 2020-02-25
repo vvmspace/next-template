@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import EventCard from '../EventCard';
 import Slider from "../Slider";
 import {makeStyles} from "@material-ui/core/styles";
+import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles(theme => ({
     theGrid: {
