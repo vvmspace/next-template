@@ -2,9 +2,10 @@ import GenrePage from "../components/GenrePage/GenrePage";
 import axios from "axios";
 
 const attrs = {
-    title: 'Концерты в Москве: Top 100 | concert.moscow - билеты без наценки и сервисного сбора',
+    title: 'Самые ожидаемые концерты 2020',
+    description: 'Купить билеты на самые крутые масштабные и ожидаемые концерты в Москве 2020',
     variations: ['поп', 'pop'],
-    keywords: ['поп', 'попса', 'поп концерты', 'дискотеки'],
+    keywords: ['крутые концерты', 'ожидаемые концерты', 'поп концерты', 'дискотеки'],
 };
 
 const Pop = props => (<GenrePage events={props.events} attrs={attrs}/>);
