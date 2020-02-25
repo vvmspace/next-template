@@ -1,2 +1,3 @@
 User-Agent: *
 Host: concert.moscow
+Sitemap: https://concert.moscow/sitemap-index.xml
