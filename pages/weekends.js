@@ -6,6 +6,7 @@ const attrs = {
     full_title: 'Концерты в Москве на этих выходных',
     variations: ['рэп', 'rap'],
     keywords: ['rap', 'рэп', 'hip-hop', 'хип-хоп'],
+    subtitle: `Если Вы ещё не определились куда сходить в Москве на выходных, то мы с радостью поможем Вам с выбором:`,
 };
 
 const Rap = props => (<GenrePage events={props.events} attrs={attrs}/>);
