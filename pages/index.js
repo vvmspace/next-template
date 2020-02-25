@@ -31,7 +31,7 @@ const Post = props => {
         <Layout>
             <Head>
                 <title> concert.moscow - билеты на концерты в Москве без наценки и сервисного сбора</title>
-                <meta httpEquiv={'description'} content={'Анонсы. Подборки. Обзоры. Фестивали. Вечеринки. Rock. Rap. Акустика. Electro. Jazz. Есть всё.'} />
+                <meta httpEquiv={'description'} content={'Самые ожидаемые концерты 2020 года'} />
             </Head>
             <Typography gutterBottom variant="h3" component="h1">
                 Концерты в Москве
@@ -49,7 +49,7 @@ const Post = props => {
                     <EventCardList sliding={true} events={weekly.slice(0,6)} showVenue={true} />
                     <Divider/></>)}
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
-                        <A className={classes.link} href={'/top'}>Top</A>
+                        <A className={classes.link} href={'/top'}>Самые ожидаемые концерты 2020 года</A>
                     </Typography>
                     <EventCardList sliding={true} events={top} showVenue={true} />
             <Divider/>
