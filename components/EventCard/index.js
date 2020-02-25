@@ -81,22 +81,22 @@ const EventCard = props => {
     return (
         <Card className={classes.root} style={{width: '100%'}}>
             {renderHTML(`<script type='application/ld+json'>${JSON.stringify(jevent)}</script>`)}
-            <EventJsonLd
-                name={event.name}
-                startDate={event.date}
-                // endDate={event.end_date}
-                location={{
-                    name: event.venue.name,
-                    sameAs: `https://concert.moscow/${event.venue.alias}`,
-                    address: {
-                        streetAddress: event.venue.address,
-                        addressLocality: 'Moscow',
-                        addressRegion: 'Moscow region'
-                    }
-                }}
-                url={`https://concert.moscow/concert/${event.alias || event.uuid}`}
-                description={`Билеты без наценки и сервисного сбора от ${event.min_price} ₽`}
-            />
+            {/*<EventJsonLd*/}
+            {/*    name={event.name}*/}
+            {/*    startDate={event.date}*/}
+            {/*    // endDate={event.end_date}*/}
+            {/*    location={{*/}
+            {/*        name: event.venue.name,*/}
+            {/*        sameAs: `https://concert.moscow/${event.venue.alias}`,*/}
+            {/*        address: {*/}
+            {/*            streetAddress: event.venue.address,*/}
+            {/*            addressLocality: 'Moscow',*/}
+            {/*            addressRegion: 'Moscow region'*/}
+            {/*        }*/}
+            {/*    }}*/}
+            {/*    url={`https://concert.moscow/concert/${event.alias || event.uuid}`}*/}
+            {/*    description={`Билеты без наценки и сервисного сбора от ${event.min_price} ₽`}*/}
+            {/*/>*/}
             <CardActionArea>
                 <A className={classes.aWrap} href={link}><CardMedia
                     className={classes.media}
