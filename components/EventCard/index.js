@@ -29,6 +29,11 @@ const useStyles = makeStyles(theme => ({
     venueName: {
         height: 37,
         overflow: 'hidden',
+    },
+    aWrap: {
+        '&:hover': {
+            textDecoration: 'none',
+        }
     }
 }));
 
@@ -72,7 +77,7 @@ const EventCard = props => {
                 description={`Билеты без наценки и сервисного сбора от ${event.min_price} ₽`}
             />
             <CardActionArea>
-                <A href={link}><CardMedia
+                <A className={classes.aWrap} href={link}><CardMedia
                     className={classes.media}
                     image={event.image || '/cm.png'}
                     title={`Концерт ${event.name} в Москве`}
