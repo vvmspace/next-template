@@ -7,8 +7,6 @@ const { api_url } = config;
 import Head from "next/head";
 import { titleCase } from "title-case";
 
-import EventCard from "../components/EventCard";
-
 const Post = props => {
 
     const { venue } = props;
