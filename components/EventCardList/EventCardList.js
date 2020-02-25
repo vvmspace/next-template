@@ -31,10 +31,10 @@ const EventCardList = props => {
                                                                               key={event.uuid}/></Grid>))}
             </Grid>
         {/*</Hidden>*/}
-        {/*<Hidden only={props.sliding && ['sm','md','lg','xl'] || ['xs','sm','md','lg','xl']}>*/}
+        <Hidden only={props.sliding && ['sm','md','lg','xl'] || ['xs','sm','md','lg','xl']}>
             <Slider className={classes.theSlider} elements={events.map(event => (<EventCard showVenue={showVenue} event={event}
                                                               key={event.uuid}/>))}/>
-        {/*</Hidden>*/}
+        </Hidden>
     </>);
 }
 
