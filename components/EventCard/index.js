@@ -76,7 +76,7 @@ const EventCard = props => {
                     className={classes.media}
                     image={event.image || '/cm.png'}
                     title={`Концерт ${event.name} в Москве`}
-                /></A>
+                />
                 <CardContent>
                     <Typography gutterBottom variant={"h5"} component="h2" className={classes.eventName}>
                         <A
@@ -89,7 +89,7 @@ const EventCard = props => {
                     <Typography gutterBottom variant="subtitle1" component="p">
                         {pretty_date}{(event.age > 0) && `, ${event.age}+`}
                     </Typography>
-                </CardContent>
+                </CardContent></A>
             </CardActionArea>
             <CardActions>
                 <Button size="small" style={{color: config.theme.palette.primary.main}} onClick={goPnm(event)}>
