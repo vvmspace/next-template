@@ -2,7 +2,7 @@ import GenrePage from "../components/GenrePage/GenrePage";
 import axios from "axios";
 
 const attrs = {
-    title: 'Поп концерты и дискотеки',
+    title: 'Концерты в Москве: Top 100 | concert.moscow - билеты без наценки и сервисного сбора',
     variations: ['поп', 'pop'],
     keywords: ['поп', 'попса', 'поп концерты', 'дискотеки'],
 };
