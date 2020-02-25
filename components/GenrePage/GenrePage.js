@@ -2,11 +2,11 @@ import Layout from "../Layout";
 import Typography from "@material-ui/core/Typography";
 import EventCardList from "../EventCardList";
 import Head from 'next/head';
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 const withSSR = events.filter(event => event.ssr);
 
-const useStyles = withStyles({
+const useStyles = makeStyles({
     subTitle: {
         marginTop: 20,
         marginBottom: 10,
