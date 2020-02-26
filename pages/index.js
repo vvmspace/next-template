@@ -66,14 +66,10 @@ const Post = props => {
 Post.getInitialProps = async function() {
 
     const res = await axios.get(`${api_url}/api/v1/event/`);
-    const {top, weekly, weekends} = res.data;
+    // const {top, weekly, weekends} = res.data;
 
 
-    return {
-        top,
-        weekly,
-        weekends
-    };
+    return res.data;
 };
 
 export default Post;
