@@ -135,7 +135,7 @@ const EventCard = props => {
                 <Button key={props.key} size="small" style={{color: config.theme.palette.primary.main}} onClick={goPnm(event)}>
                     Билеты {(event.max_price !== event.min_price) && `от ${event.min_price} ₽` || `по ${event.min_price} ₽`}
                 </Button>
-                <Button key={props.key} size="small" style={{color: config.theme.palette.primary.main}} href={link}>
+                <Button rel={'nofollow'} key={props.key} size="small" style={{color: config.theme.palette.primary.main}} href={link}>
                     Подробнее
                 </Button>
             </CardActions>
