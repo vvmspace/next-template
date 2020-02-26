@@ -92,7 +92,7 @@ const EventCard = props => {
         jevent.image = event.image;
     }
     return (
-        <Card className={classes.root} style={{width: '100%'}}>
+        <Card className={classes.root} style={{width: '100%'}} key={props.key}>
             {renderHTML(`<script type='application/ld+json'>${JSON.stringify(jevent)}</script>`)}
             {/*<EventJsonLd*/}
             {/*    name={event.name}*/}
@@ -110,31 +110,32 @@ const EventCard = props => {
             {/*    url={`https://concert.moscow/concert/${event.alias || event.uuid}`}*/}
             {/*    description={`Билеты без наценки и сервисного сбора от ${event.min_price} ₽`}*/}
             {/*/>*/}
-            <CardActionArea>
-                <A className={classes.aWrap} href={link}><CardMedia
+            <CardActionArea key={props.key}>
+                <A key={props.key} className={classes.aWrap} href={link}><CardMedia
                     className={classes.media}
                     image={event.image || '/cm.png'}
                     title={`Концерт ${event.name} в Москве`}
+                    key={props.key}
                 />
-                <CardContent>
-                    <Typography gutterBottom variant={"h5"} component="h2" className={classes.eventName}>
-                        <A
+                <CardContent key={props.key}>
+                    <Typography gutterBottom variant={"h5"} component="h2" className={classes.eventName} key={props.key}>
+                        <A key={props.key}
                             href={link}
                             title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{
                                 event && event.name && event.name.substr(0, 60).split(' и ')[0]}</A>
                     </Typography>
                     {showVenue
-                     && (<Typography gutterBottom variant="subtitle2" component="p"  className={classes.venueName}><A href={`/${event.venue.alias}`}>{event.venue.name}</A></Typography>)}
-                    <Typography gutterBottom variant="subtitle1" component="p">
+                     && (<Typography key={props.key} gutterBottom variant="subtitle2" component="p"  className={classes.venueName}><A href={`/${event.venue.alias}`}>{event.venue.name}</A></Typography>)}
+                    <Typography gutterBottom variant="subtitle1" component="p" key={props.key}>
                         {pretty_date}{(event.age > 0) && `, ${event.age}+`}
                     </Typography>
                 </CardContent></A>
             </CardActionArea>
-            <CardActions>
-                <Button size="small" style={{color: config.theme.palette.primary.main}} onClick={goPnm(event)}>
+            <CardActions key={props.key}>
+                <Button key={props.key} size="small" style={{color: config.theme.palette.primary.main}} onClick={goPnm(event)}>
                     Билеты {(event.max_price !== event.min_price) && `от ${event.min_price} ₽` || `по ${event.min_price} ₽`}
                 </Button>
-                <Button size="small" style={{color: config.theme.palette.primary.main}} href={link}>
+                <Button key={props.key} size="small" style={{color: config.theme.palette.primary.main}} href={link}>
                     Подробнее
                 </Button>
             </CardActions>
