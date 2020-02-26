@@ -64,43 +64,50 @@ const bottomLinks = [{
 ];
 
 const links = [
-    [{
-        text: 'Главклуб',
-        href: '/glavclub',
-        icon: <WhatshotIcon style={{color: 'red'}}/>,
-    }],
-    [{
-        text: 'На неделе',
-        href: '/weekly',
-    },{
-        text: 'На выходных',
-        href: '/weekends',
-    },],
-    [{
-        text: 'Top',
-        href: '/top',
-        icon: <WhatshotIcon style={{color: 'red'}}/>,
-    }],
-    [{
-        text: 'Акустика',
-        href: '/acoustic',
-    },{
-        text: 'Rock',
-        href: '/rock',
-    },{
-        text: 'Rap & Hip-Hop',
-        href: '/rap',
-    },{
-        text: 'Pop',
-        href: '/pop',
-    },{
-        text: 'Electro',
-        href: '/electro',
-        icon: <BatteryChargingFullIcon style={{color: 'red'}}/>,
-        style: {background: '#448b00', color: 'white', fontWeight: 'bold'}
-    },],
+    {
+        items: [{
+            text: 'Главклуб',
+            href: '/glavclub',
+            icon: <WhatshotIcon style={{color: 'red'}}/>,
+        }]
+    },
 
-]
+    {
+        items: [{
+            text: 'На неделе',
+            href: '/weekly',
+        }, {
+            text: 'На выходных',
+            href: '/weekends',
+        },]
+    },
+
+    {items: [{
+            text: 'Top',
+            href: '/top',
+            icon: <WhatshotIcon style={{color: 'red'}}/>,
+        },]
+    },
+
+    {items: [{
+            text: 'Акустика',
+            href: '/acoustic',
+        },{
+            text: 'Rock',
+            href: '/rock',
+        },{
+            text: 'Rap & Hip-Hop',
+            href: '/rap',
+        },{
+            text: 'Pop',
+            href: '/pop',
+        },{
+            text: 'Electro',
+            href: '/electro',
+            icon: <BatteryChargingFullIcon style={{color: 'red'}}/>,
+            style: {background: '#448b00', color: 'white', fontWeight: 'bold'}
+        },]
+    },];
 
 const Menu = props => {
     const classes = useStyles();
@@ -110,7 +117,7 @@ const Menu = props => {
         </ListItem></A></List>
         <Divider/>
         {links.map(links => (<>
-            <MenuList items={links} />
+            <MenuList title={links.title} items={links.items} />
             <Divider/>
         </>))}
         {/*<Divider />*/}
