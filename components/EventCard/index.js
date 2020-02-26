@@ -118,7 +118,7 @@ const EventCard = props => {
                     key={props.key}
                 />
                 <CardContent key={props.key}>
-                    <Typography gutterBottom variant={"h5"} component="h2" className={classes.eventName} key={props.key}>
+                    <Typography gutterBottom variant={"h5"} component="h3" className={classes.eventName} key={props.key}>
                         <A key={props.key}
                             href={link}
                             title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{
