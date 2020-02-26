@@ -57,7 +57,7 @@ const Post = props => {
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
                         <A className={classes.link} href={'/top'}>Самые ожидаемые концерты 2020 года</A>
                     </Typography>
-                    <EventCardList sliding={true} events={top} showVenue={true} />
+                    <EventCardList sliding={true} events={top.slice(0,12)} showVenue={true} />
             <Divider/>
         </Layout>
     );
