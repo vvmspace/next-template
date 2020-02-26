@@ -65,14 +65,6 @@ const bottomLinks = [{
 
 const links = [
     {
-        items: [{
-            text: 'Главклуб',
-            href: '/glavclub',
-            icon: <WhatshotIcon style={{color: 'red'}}/>,
-        }]
-    },
-
-    {
         title: 'По дням',
         items: [{
             text: 'На неделе',
@@ -83,11 +75,16 @@ const links = [
         },]
     },
 
-    {items: [{
+    {   title: 'Hot',
+        items: [{
             text: 'Top',
             href: '/top',
             icon: <WhatshotIcon style={{color: 'red'}}/>,
-        },]
+        },{
+            text: 'Главклуб',
+            href: '/glavclub',
+            icon: <WhatshotIcon style={{color: 'red'}}/>,
+        }]
     },
 
     {   title: 'По жанрам',
