@@ -6,7 +6,7 @@ import {ListItemText, ListItem} from "@material-ui/core";
 export default props => (<List>{<>
     {props.title && (
         <ListItem>
-            <ListItemText>{props.title}</ListItemText>
+            <ListItemText><strong>{props.title}</strong></ListItemText>
         </ListItem>
     )}
     {props.items && props.items.map(({text, href, icon, iconColor, title}) => (
