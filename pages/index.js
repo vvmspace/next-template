@@ -25,7 +25,7 @@ const Post = props => {
 
     const classes = useStyles(config.theme);
 
-    const { top, weekly, weekends } = props;
+    const { top, weekly, weekends, ssr } = props;
 
     return (
         <Layout>
@@ -48,6 +48,12 @@ const Post = props => {
                     </Typography>
                     <EventCardList sliding={true} events={weekly.slice(0,6)} showVenue={true} />
                     <Divider/></>)}
+                    {(ssr.length > 0) && (<>
+                    <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
+                        Выбор редакции
+                    </Typography>
+                    <EventCardList sliding={true} events={ssr} showVenue={true} />
+                    <Divider/></>)}
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
                         <A className={classes.link} href={'/top'}>Самые ожидаемые концерты 2020 года</A>
                     </Typography>
@@ -60,14 +66,10 @@ const Post = props => {
 Post.getInitialProps = async function() {
 
     const res = await axios.get(`${api_url}/api/v1/event/`);
-    const {top, weekly, weekends} = res.data;
+    // const {top, weekly, weekends} = res.data;
 
 
-    return {
-        top,
-        weekly,
-        weekends
-    };
+    return res.data;
 };
 
 export default Post;

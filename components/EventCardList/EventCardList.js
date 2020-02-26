@@ -4,6 +4,7 @@ import EventCard from '../EventCard';
 import Slider from "../Slider";
 import {makeStyles} from "@material-ui/core/styles";
 import Hidden from "@material-ui/core/Hidden";
+import { useTheme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
     theGrid: {
@@ -21,21 +22,30 @@ const useStyles = makeStyles(theme => ({
 const EventCardList = props => {
     const {events, showVenue} = props;
     const classes = useStyles();
+    const theme = useTheme();
 
 
     return (<>
         {/*<Hidden only={props.sliding && 'xs' || []}>*/}
-            <Grid className={props.sliding && classes.theGrid} container spacing={1}>{events
-                .sort((event1, event2) => (new Date(event1.date).getTime() > new Date(event2.date).getTime() && 1 || -1))
+            <Grid className={props.sliding && theme.breakpoints.down('xs') && classes.theGrid} container spacing={1}>{events
+                .sort((event1, event2) => {
+                    if (new Date(event1.date).getTime() > new Date(event2.date).getTime()){
+                        return 1;
+                    }
+                    if (new Date(event1.date).getTime() < new Date(event2.date).getTime()){
+                        return -1;
+                    }
+                    return (event1.name > event2) && 1 || -1;
+                })
                 .map(event => (
                     <Grid item xs={12} sm={6} lg={3} xl={2} md={3}><EventCard showVenue={showVenue} event={event}
-                                                                              key={event.uuid}/></Grid>))}
+                                                                              key={event.uuid + Math.floor(Math.random() * 10000)}/></Grid>))}
             </Grid>
         {/*</Hidden>*/}
-        <Hidden only={props.sliding && ['sm','md','lg','xl'] || ['xs','sm','md','lg','xl']}>
+        {props.sliding && theme.breakpoints.down('xs') && (<Hidden only={props.sliding && ['sm','md','lg','xl'] || ['xs','sm','md','lg','xl']}>
             <Slider className={classes.theSlider} elements={events.map(event => (<EventCard showVenue={showVenue} event={event}
-                                                              key={event.uuid}/>))}/>
-        </Hidden>
+                                                              key={event.uuid + Math.floor(Math.random() * 10000)}/>))}/>
+        </Hidden>)}
     </>);
 }
 
