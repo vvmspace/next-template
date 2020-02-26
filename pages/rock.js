@@ -11,7 +11,7 @@ const Rock = props => (<GenrePage events={props.events} attrs={attrs}/>);
 
 Rock.getInitialProps = async function() {
 
-    const res = await axios.get(`http://localhost:7007/api/v1/event/rock`).catch(e => log(e));
+    const res = await axios.get(`https://api.concert.moscow/api/v1/event/rock`).catch(e => log(e));
 
     console.log(res);
 
