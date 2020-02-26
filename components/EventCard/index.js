@@ -122,7 +122,7 @@ const EventCard = props => {
                         <A key={props.key}
                             href={link}
                             title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{
-                                event && event.name && event.name.substr(0, 60).split(' и ')[0]}</A>
+                                event && event.name && ((event.name.length < 20) && event.name || event.name.substr(0, 60).split(' и ')[0])}</A>
                     </Typography>
                     {showVenue
                      && (<Typography key={props.key} gutterBottom variant="subtitle2" component="p"  className={classes.venueName}><A href={`/${event.venue.alias}`}>{event.venue.name}</A></Typography>)}
