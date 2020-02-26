@@ -1,6 +1,7 @@
 import Container from "@material-ui/core/Container";
 import React from "react";
 export default () => (<Container>
+    {(typeof window !== 'undefined') && (<>
     <p>Сайт недавно запущен. Разработка продолжается. Отзывы, предложения, пожелания присылайте в Telegram: @vvmspace</p>
     <p><a href="//www.liveinternet.ru/click" target="_blank">
         <img
@@ -13,4 +14,5 @@ export default () => (<Container>
             title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня"
             border="0" width="88" height="31" />
     </a></p>
+    </>)}
 </Container>);
