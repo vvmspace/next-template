@@ -105,6 +105,7 @@ const Menu = props => {
         <List><A href={'/'}><ListItem button key={props.text}>
             <img style={{height: 24, marginTop: 2, marginBottom: 2, marginRight: 32}} src='/favicon.ico'/><ListItemText style={{fontWeight: 'bold'}} primary={(<>concert<span style={{color: '#448b00'}}>.moscow</span></>)} />
         </ListItem></A></List>
+        <Divider/>
         {links.map(links => (<>
             <MenuList items={links} />
             <Divider/>
