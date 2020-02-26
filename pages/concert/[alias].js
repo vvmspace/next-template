@@ -107,6 +107,10 @@ const Post = props => {
                             && (<>составляет <b>{event.min_price}₽</b></>)
                             || (<>находится в диапазоне от <b>{event.min_price}</b> ₽ до <b>{event.max_price}</b> ₽</>)}
                         </Typography>
+                        <Typography variant="h5" component="h3">Билеты дорожают и заканчиваются</Typography>
+                        <Typography variant="subtitle2" component="p" gutterBottom>
+                            Не забывайте о том, что по мере приближения <strong>{date_formatted}</strong> билеты могут подорожать или закончиться.
+                        </Typography>
                         <div align={'right'} style={{paddingTop: 20}}>
                             <Button variant="contained" color="primary" onClick={goPnm(event)}>
                                 Купить билет от {event.min_price} ₽
@@ -116,7 +120,7 @@ const Post = props => {
                     <Grid item xs={12} xl={12}>
                         <Typography align={'justify'} component={'div'} variant={'body1'}>{
                             ((typeof window !== 'undefined') || (event.ssr)) && renderHTML(event.description
-                                .replace(event.name, `<b>${event.name}</b>`)
+                                .replace(event.name, `<strong>${event.name}</strong>`)
                                 .replace('ponominalu.ru', '<a href="https://concert.moscow/">concert.moscow</a>')) || ''}</Typography>
                     </Grid>
 
