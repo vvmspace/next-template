@@ -82,6 +82,9 @@ const links = [
         icon: <WhatshotIcon style={{color: 'red'}}/>,
     }],
     [{
+        text: 'Акустика',
+        href: '/acoustic',
+    },{
         text: 'Rock',
         href: '/rock',
     },{
