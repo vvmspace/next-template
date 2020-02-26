@@ -114,7 +114,7 @@ const EventCard = props => {
                 <A key={props.key} className={classes.aWrap} href={link}><CardMedia
                     className={classes.media}
                     image={event.image || '/cm.png'}
-                    title={`Концерт ${event.name} в Москве ${new Date().getFullYear()}`}
+                    title={`Концерт ${event.name} в Москве ${new Date(event.date).getFullYear()}`}
                     key={props.key}
                 />
                 <CardContent key={props.key}>
