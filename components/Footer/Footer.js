@@ -2,7 +2,7 @@ import Container from "@material-ui/core/Container";
 import React from "react";
 export default () => (<Container>
     {(typeof window !== 'undefined') && (<>
-    <p>Сайт недавно запущен. Разработка продолжается. Отзывы, предложения, пожелания присылайте в Telegram: @vvmspace</p>
+    <p>Сайт запущен 23 февраля 2020 г. Отзывы, предложения, пожелания присылайте в Telegram: @vvmspace</p>
     <p><a href="//www.liveinternet.ru/click" target="_blank">
         <img
             src={`//counter.yadro.ru/hit?t11.15;r${(typeof window !== 'undefined')
