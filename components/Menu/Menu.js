@@ -73,6 +73,7 @@ const links = [
     },
 
     {
+        title: 'По дням',
         items: [{
             text: 'На неделе',
             href: '/weekly',
@@ -89,7 +90,8 @@ const links = [
         },]
     },
 
-    {items: [{
+    {   title: 'По жанрам',
+        items: [{
             text: 'Акустика',
             href: '/acoustic',
         },{
