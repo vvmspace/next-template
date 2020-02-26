@@ -76,7 +76,7 @@ const Post = props => {
             <Container>
                 {renderHTML(`<script type='application/ld+json'>${JSON.stringify(jevent)}</script>`)}
             <Typography variant="h3" component="h1" gutterBottom>
-                {isConcert && 'Концерт ' || ''}{name} в Москве
+                {addConcert && 'Концерт ' || ''}{name} в Москве
             </Typography>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
