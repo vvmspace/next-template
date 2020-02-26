@@ -2,6 +2,7 @@ import Container from "@material-ui/core/Container";
 import React from "react";
 export default () => (<Container>
     {(typeof window !== 'undefined') && (<>
+        <p>Powered by Vladimir V. Myagdeev (<a href={'mailto:concert.moscow@vvm.space'}>concert.moscow@vvm.space</a>), 2020</p>
     <p>Сайт запущен 23 февраля 2020 г. Отзывы, предложения, пожелания присылайте в Telegram: @vvmspace</p>
     <p><a href="//www.liveinternet.ru/click" target="_blank">
         <img
