@@ -2,7 +2,7 @@ import Container from "@material-ui/core/Container";
 import React from "react";
 export default () => (<div style={{backgroundColor: '#448b00',
     paddingTop: 10,
-    boxShadow: '4px 2px 0px -1px rgba(0,0,0,0.2), 4px 4px 0px 0px rgba(0,0,0,0.14), 10px 1px 0px 0px rgba(0,0,0,0.12)'
+    boxShadow: '4px 2px 0px -1px rgba(0,0,0,0.2), 4px 4px 0px 0px rgba(0,0,0,0.14), 10px 1px 0px 0px rgba(0,0,0,0.12)',
     color: '#fff',
     paddingBottom: 5
 
