@@ -1,6 +1,6 @@
 import Container from "@material-ui/core/Container";
 import React from "react";
-export default () => (<div style={{backgroundColor: '#448b00', paddingTop: 20}}><Container>
+export default () => (<div style={{backgroundColor: '#448b00', paddingTop: 10, boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)'}}><Container>
     {(typeof window !== 'undefined') && (<>
         <p>Powered by Vladimir V. Myagdeev (<a href={'mailto:concert.moscow@vvm.space'}>concert.moscow@vvm.space</a>), 2020</p>
     <p>Сайт запущен 23 февраля 2020 г. Отзывы, предложения, пожелания присылайте в Telegram: @vvmspace</p>
