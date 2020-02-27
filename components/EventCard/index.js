@@ -118,7 +118,7 @@ const EventCard = props => {
                     key={props.key}
                 />
                 <CardContent key={props.key}>
-                    <Typography gutterBottom variant={"h5"} component="h2" className={classes.eventName} key={props.key}>
+                    <Typography gutterBottom variant={"h5"} component="h3" className={classes.eventName} key={props.key}>
                         <A key={props.key}
                             href={link}
                             title={`Купить билеты на концерт ${event.name} в Москве ${pretty_date} без наценки от ${event.min_price} рублей`}>{
@@ -135,7 +135,7 @@ const EventCard = props => {
                 <Button key={props.key} size="small" style={{color: config.theme.palette.primary.main}} onClick={goPnm(event)}>
                     Билеты {(event.max_price !== event.min_price) && `от ${event.min_price} ₽` || `по ${event.min_price} ₽`}
                 </Button>
-                <Button key={props.key} size="small" style={{color: config.theme.palette.primary.main}} href={link}>
+                <Button rel={'nofollow'} key={props.key} size="small" style={{color: config.theme.palette.primary.main}} href={link}>
                     Подробнее
                 </Button>
             </CardActions>
