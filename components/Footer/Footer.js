@@ -1,6 +1,6 @@
 import Container from "@material-ui/core/Container";
 import React from "react";
-export default () => (<Container>
+export default () => (<div style={{backgroundColor: '#448b00', paddingTop: 20}}><Container>
     {(typeof window !== 'undefined') && (<>
         <p>Powered by Vladimir V. Myagdeev (<a href={'mailto:concert.moscow@vvm.space'}>concert.moscow@vvm.space</a>), 2020</p>
     <p>Сайт запущен 23 февраля 2020 г. Отзывы, предложения, пожелания присылайте в Telegram: @vvmspace</p>
@@ -16,4 +16,4 @@ export default () => (<Container>
             border="0" width="88" height="31" />
     </a></p>
     </>)}
-</Container>);
+</Container></div>);
