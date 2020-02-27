@@ -36,6 +36,7 @@ const Post = props => {
             <Typography gutterBottom variant="h3" component="h1">
                 Концерты в Москве
             </Typography>
+            <Typography variant={'subtitle1'} component={'p'}>Афиша всех <noindex>(или почти всех)</noindex> концертов Москвы. Билеты без наценок и сервисного сбора. Что может быть лучше?</Typography>
             {(weekends.length > 0) && (<>
                     <Typography gutterBottom variant="h4" component="h2" style={{marginTop: 20}}>
                     <a className={classes.link} href={'/weekends'}>На этих выходных</a>
