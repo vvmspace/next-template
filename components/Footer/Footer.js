@@ -6,7 +6,7 @@ export default () => (<Container>
     <p>Сайт запущен 23 февраля 2020 г. Отзывы, предложения, пожелания присылайте в Telegram: @vvmspace</p>
     <p><a href="//www.liveinternet.ru/click" target="_blank">
         <img
-            src={`//counter.yadro.ru/hit?t11.15;r${(typeof window !== 'undefined')
+            src={`//counter.yadro.ru/hit?t14.15;r${(typeof window !== 'undefined')
             && (escape(document.referrer)+((typeof(screen)=='undefined')?'':
                 ';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
                 screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
