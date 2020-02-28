@@ -27,7 +27,7 @@ export default props => {
             url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
             price: event.min_price,
             priceCurrency : "RUB",
-            availability: event.has_eticket && (new Date() < new Date(event.date)),
+            availability: event.has_eticket && (new Date() < new Date(event.date)) && 'http://schema.org/InStock' || 'http://schema.org/SoldOut',
             validFrom: new Date(event.updatedAt).toISOString(),
         },
         url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
