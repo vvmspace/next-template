@@ -33,6 +33,13 @@ export default props => {
         },
         url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
         description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`
+    };
+
+    if ((event.name.length < 10) || (event.name.split(' ').length <= 4)){
+        jevent.performer = {
+            "@type": "PerformingGroup",
+            "name": event.name
+        };
     }
 
     // if (event.image) {
