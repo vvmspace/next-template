@@ -9,8 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import A from '../A';
 import config from "../../config";
-import { EventJsonLd } from "next-seo";
-const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+import EventJSONLd from "../JSONLd/EventJSONLd";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -59,57 +58,9 @@ const EventCard = props => {
 
     const goPnm = event => () => (typeof window !== 'undefined') && window.open(event.url + '?promote=concertmoscow') || (() => {});
 
-    const jevent = {
-        "@context": "https://www.schema.org",
-        "@type": "Event",
-        name: event.name,
-        startDate: event.date,
-        endDate: new Date(event.end_date).toISOString().split('T')[0],
-        location: {
-            "@type": "Place",
-            name: event.venue.name,
-            sameAs: `https://concert.moscow/${event.venue.alias}`,
-            address: {
-            streetAddress: event.venue.address,
-                addressLocality: 'Moscow',
-                addressRegion: 'Moscow region'
-        },
-    },
-    offers: {
-        "@type": "Offer",
-        description: "без наценки и сервисного сбора",
-        url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
-        price: event.min_price,
-        priceCurrency : "RUB",
-        availability: event.has_eticket && (new Date() < new Date(event.date)),
-        validFrom: new Date(event.updatedAt).toISOString(),
-    },
-    url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
-    description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`
-    }
-
-    if (event.image) {
-        jevent.image = event.image;
-    }
     return (
         <Card className={classes.root} style={{width: '100%'}} key={props.key}>
-            {renderHTML(`<script type='application/ld+json'>${JSON.stringify(jevent)}</script>`)}
-            {/*<EventJsonLd*/}
-            {/*    name={event.name}*/}
-            {/*    startDate={event.date}*/}
-            {/*    // endDate={event.end_date}*/}
-            {/*    location={{*/}
-            {/*        name: event.venue.name,*/}
-            {/*        sameAs: `https://concert.moscow/${event.venue.alias}`,*/}
-            {/*        address: {*/}
-            {/*            streetAddress: event.venue.address,*/}
-            {/*            addressLocality: 'Moscow',*/}
-            {/*            addressRegion: 'Moscow region'*/}
-            {/*        }*/}
-            {/*    }}*/}
-            {/*    url={`https://concert.moscow/concert/${event.alias || event.uuid}`}*/}
-            {/*    description={`Билеты без наценки и сервисного сбора от ${event.min_price} ₽`}*/}
-            {/*/>*/}
+            <EventJSONLd event={event}/>
             <CardActionArea key={props.key}>
                 <A key={props.key} className={classes.aWrap} href={link}><CardMedia
                     className={classes.media}
