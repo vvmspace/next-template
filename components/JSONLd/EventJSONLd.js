@@ -11,6 +11,7 @@ export default props => {
         name: event.name,
         startDate: event.date,
         endDate: new Date(event.end_date).toISOString().split('T')[0],
+        image: event.image || 'https://concert.moscow/cm.png',
         location: {
             "@type": "Place",
             name: event.venue.name,
@@ -34,9 +35,9 @@ export default props => {
         description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`
     }
 
-    if (event.image) {
-        jevent.image = event.image;
-    }
+    // if (event.image) {
+    //     jevent.image = event.image;
+    // }
 
     return (renderHTML(`<script type='application/ld+json'>${JSON.stringify(jevent)}</script>`));
 }
