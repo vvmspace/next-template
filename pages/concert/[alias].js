@@ -11,11 +11,18 @@ import EventJSONLd from "../../components/JSONLd/EventJSONLd";
 import Container from "@material-ui/core/Container";
 const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
 const { api_url } = config;
+import Error from "next/error";
 
 const Post = props => {
 
-    const { event } = props;
-    const { venue, name } = event;
+    const { event, errorCode } = props;
+    if (errorCode) {
+        return (<Error statusCode={errorCode} />);
+    }
+    if (!event) {
+        return (<Error statusCode={404} />);
+    }
+    const { name } = event;
 
     const isConcert = event.category.includes('Концерт') || event.description.includes('Концерт');
     const addConcert = isConcert && (!event.name.includes('концерт'));
@@ -107,12 +114,19 @@ Post.getInitialProps = async function({ query }) {
     const { alias } = query;
 
 
-    const res = await axios.get(`${api_url}/api/v1/event/${alias}`);
-    const event = res.data;
+    try {
+        const res = await axios.get(`${api_url}/api/v1/event/${alias}`);
+        const event = res.data;
 
-    return {
-        event
-    };
+
+
+        return {
+            event
+        };
+    } catch (e) {
+        return { errorCode: 502 };
+    }
+
 };
 
 export default Post;
