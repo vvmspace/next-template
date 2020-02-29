@@ -56,7 +56,7 @@ const EventCard = props => {
         timeZone: 'Europe/Moscow'
     });
 
-    const goPnm = event => () => (typeof window !== 'undefined') && window.open(event.url + '?promote=concertmoscow') || (() => {});
+    const goPnm = event => () => (typeof window !== 'undefined') && window.open(`${event.url}?promote=${event.ref_code || 'concertmoscow'}`) || (() => {});
 
     return (
         <Card className={classes.root} style={{width: '100%'}} key={props.key}>
