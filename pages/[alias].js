@@ -2,7 +2,7 @@ import axios from 'axios';
 import config from '../config';
 import Layout from "../components/Layout";
 import EventCardList from "../components/EventCardList";
-import { Typography, Grid, Divider } from '@material-ui/core';
+import { Typography, Divider } from '@material-ui/core';
 const { api_url } = config;
 import Head from "next/head";
 import { titleCase } from "title-case";
