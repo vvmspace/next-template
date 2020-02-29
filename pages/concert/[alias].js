@@ -109,7 +109,7 @@ const Event = props => {
     );
 };
 
-Post.getInitialProps = async function({ query }) {
+Event.getInitialProps = async function({ query }) {
 
     const { alias } = query;
 
