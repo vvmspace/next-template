@@ -5,6 +5,10 @@ const attrs = {
     title: 'Рок-концерты',
     variations: ['рок', 'rock'],
     keywords: ['рок', 'панк-рок', 'рок концерты', 'рок-концерты', 'слэм', 'бош'],
+    metatags: {
+        description: 'Рок концерты в Москве 2020. Официальные билеты без наценки и сервисного сбора.',
+        keywords: 'рок, панк-рок, рок концерты, рок-концерты, Нашествие'
+    }
 };
 
 const Rock = props => (<GenrePage events={props.events} attrs={attrs}/>);
