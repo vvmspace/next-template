@@ -25,7 +25,7 @@ const Post = props => {
       <Layout>
           <Head>
               <title>Концерты в {name} | concert.moscow - билеты на концерты в Москве без наценки и сервисного сбора</title>
-              <meta httpEquiv={'description'} content={`Афиша концертов в ${name}. Билеты без наценки и сервисного сбора.`} />
+              <meta httpEquiv={'description'} content={`Афиша концертов в ${name}. Официальные билеты без наценки и сервисного сбора.`} />
               <link rel={'canonical'} href={`https://concert.moscow/${alias || uuid}`} />
           </Head>
           <Typography variant="h2" component="h1" gutterBottom>
