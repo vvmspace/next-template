@@ -9,9 +9,9 @@ const attrs = {
     rp: 'электронной музыки',
 };
 
-const Rap = props => (<GenrePage events={props.events} attrs={attrs}/>);
+const Genre = props => (<GenrePage events={props.events} attrs={attrs}/>);
 
-Rap.getInitialProps = async function() {
+Genre.getInitialProps = async function() {
 
     const res = await axios.get(`https://api.concert.moscow/api/v1/event/electro`).catch(e => log(e));
 
@@ -22,4 +22,4 @@ Rap.getInitialProps = async function() {
     };
 };
 
-export default Rap;
+export default Genre;

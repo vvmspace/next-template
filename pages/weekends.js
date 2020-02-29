@@ -9,9 +9,9 @@ const attrs = {
     subtitle: `Если Вы ещё не определились куда сходить в Москве на выходных, то мы с радостью поможем Вам с выбором:`,
 };
 
-const Rap = props => (<GenrePage events={props.events} attrs={attrs}/>);
+const Genre = props => (<GenrePage events={props.events} attrs={attrs}/>);
 
-Rap.getInitialProps = async function() {
+Genre.getInitialProps = async function() {
 
     const res = await axios.get(`https://api.concert.moscow/api/v1/event/weekends`).catch(e => log(e));
 

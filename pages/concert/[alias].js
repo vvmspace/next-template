@@ -13,7 +13,7 @@ const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInner
 const { api_url } = config;
 import Error from "next/error";
 
-const Post = props => {
+const Event = props => {
 
     const { event, errorCode } = props;
     if (errorCode) {
@@ -129,4 +129,4 @@ Post.getInitialProps = async function({ query }) {
 
 };
 
-export default Post;
+export default Event;
