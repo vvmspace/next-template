@@ -5,7 +5,10 @@ const attrs = {
     title: 'Акустические концерты',
     variations: ['Electro', 'elec'],
     keywords: ['акустика', 'acoustic', 'акустические концерты'],
-    description: 'Лучшие акустические концерты а Москве',
+    description: 'Акустические концерты в Москве. Акуистические билеты без наценки и сервисного сбора',
+    metatags: {
+        description: 'Акустические концерты в Москве. Акуистические билеты без наценки и сервисного сбора'
+    }
 };
 
     const Genre = props => (<GenrePage events={props.events} attrs={attrs}/>);
