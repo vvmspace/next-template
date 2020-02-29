@@ -5,6 +5,11 @@ const attrs = {
     title: 'Рэп и хип-хоп концерты',
     variations: ['рэп', 'rap'],
     keywords: ['rap', 'рэп', 'hip-hop', 'хип-хоп'],
+    metatags: {
+        description: 'Рэп концерты в Москве 2020. Официальные билеты без наценки и сервисного сбора.',
+        keywords: 'рэп, rap, hip-hop, хип-хоп'
+    }
+
 };
 
 const Rap = props => (<GenrePage events={props.events} attrs={attrs}/>);
