@@ -6,11 +6,12 @@ import { Typography, Divider } from '@material-ui/core';
 const { api_url } = config;
 import Head from "next/head";
 import { titleCase } from "title-case";
+import React from "react";
 
 const Post = props => {
 
     const { venue } = props;
-    const { name:_name, address, events } = venue;
+    const { name:_name, address, events, alias, uuid } = venue;
     const name = titleCase(_name);
     const sorted = {
         events: events
@@ -25,6 +26,7 @@ const Post = props => {
           <Head>
               <title>Концерты в {name} | concert.moscow - билеты на концерты в Москве без наценки и сервисного сбора</title>
               <meta httpEquiv={'description'} content={`Афиша концертов в ${name}. Билеты без наценки и сервисного сбора.`} />
+              <link rel={'canonical'} href={`https://concert.moscow/${alias || uuid}`} />
           </Head>
           <Typography variant="h2" component="h1" gutterBottom>
               {name}
