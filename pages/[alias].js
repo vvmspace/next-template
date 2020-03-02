@@ -8,8 +8,9 @@ import Head from "next/head";
 import { titleCase } from "title-case";
 import React from "react";
 import VenuePage from '../components/Pages/VenuePage';
+import EventPage from '../components/Pages/EventPage';
 
-const Post = props => (<VenuePage venue={props.venue}/>);
+const Post = props => (props.venue && (<VenuePage venue={props.venue}/>)) || (<EventPage event={props.event}/>);
 
 // const Post = props => {
 //
@@ -53,14 +54,20 @@ Post.getInitialProps = async function({ query }) {
 
     const { alias } = query;
 
+    let event, venue;
 
     const res = await axios.get(`${api_url}/api/v1/venue/${alias}`);
-    const venue = res.data;
+    venue = res.data;
+    if(!venue) {
+        const res = await axios.get(`${api_url}/api/v1/event/${alias}`);
+        event = res.data;
+    }
 
     console.log(`Show data fetched. Count: ${venue.events.length}`);
 
     return {
-        venue
+        venue,
+        event
     };
   };
 
