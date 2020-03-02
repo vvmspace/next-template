@@ -85,6 +85,9 @@ const links = [
         }, {
             text: 'На выходных',
             href: '/weekends',
+        }, {
+            text: 'Лето 2020',
+            href: '/summer',
         },]
     },
 
