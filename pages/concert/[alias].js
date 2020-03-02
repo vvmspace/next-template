@@ -43,9 +43,9 @@ const Event = props => {
     const goPnm = event => () => (typeof window !== 'undefined') && window.open(`${event.url}?promote=${event.ref_code || 'concertmoscow'}`) || (() => {});
 
     return (
-        <Layout overlay={(
+        <Layout overlay={
             <a href={'#'} onClick={goPnm(event)}>Купить билеты</a>
-        )}>
+        }>
             <Head>
                 <title>{addConcert && 'Концерт ' || ''}{event.name} в Москве {date_formatted} | concert.moscow - купить билеты без наценки и сервисного сбора</title>
                 <meta httpEquiv={'description'} content={`Купить билеты на ${addConcert && 'концерт ' || ''}${event.name} в ${event.venue.name}  без наценки и сервисного сбора`}/>

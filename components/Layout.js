@@ -61,7 +61,6 @@ const Layout = props => {
 
     return (
     <div onClick={closeMenu}>
-        { props.overlay || ''}
         <NavBar menuToggler={openMenu} />
         <Drawer anchor={"left"} open={state.menuOpened}>
             <Menu/>
@@ -69,6 +68,7 @@ const Layout = props => {
         <div className={classes.root}>
             {props.children}
         </div>
+        { props.overlay }
         <Footer/>
     </div>
 )};
