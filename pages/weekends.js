@@ -22,4 +22,4 @@ Genre.getInitialProps = async function() {
     };
 };
 
-export default Rap;
+export default Genre;
