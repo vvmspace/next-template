@@ -31,7 +31,7 @@ export default props => {
             availability: event.has_eticket && (new Date() < new Date(event.date)) && 'http://schema.org/InStock' || 'http://schema.org/SoldOut',
             validFrom: new Date(event.updatedAt).toISOString(),
         },
-        url: `https://concert.moscow/concert/${event.alias || event.uuid}`,
+        url: event.ssr && `https://concert.moscow/${event.alias || event.uuid}` || `https://concert.moscow/concert/${event.alias || event.uuid}`,
         description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`
     };
 
