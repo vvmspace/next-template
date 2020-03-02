@@ -44,7 +44,7 @@ const Event = props => {
 
     return (
         <Layout overlay={
-            <a style={{position: 'fixed', bottom: 0, left: 0, right:0, display: 'block', width: '100%', textAlign: 'center', textTransform: 'uppercase', color: "black", backgroundColor: 'white', border: '1px solid black'}} href={'#'} onClick={goPnm(event)}>Купить билеты</a>
+            <a style={{position: 'fixed', bottom: 0, left: 0, right:0, display: 'block', width: '100%', textAlign: 'center', textTransform: 'uppercase', color: "black", backgroundColor: 'white', border: '1px solid black', textDecoration: 'none', padding: 7}} href={'#'} onClick={goPnm(event)}>Купить билеты</a>
         }>
             <Head>
                 <title>{addConcert && 'Концерт ' || ''}{event.name} в Москве {date_formatted} | concert.moscow - купить билеты без наценки и сервисного сбора</title>
