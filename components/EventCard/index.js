@@ -43,7 +43,7 @@ const EventCard = props => {
     const {event, showVenue} = props;
 
     const {description} = event || {};
-    const link = `/concert/${event.alias || event.uuid}`;
+    const link = event.ssr && `/${event.alias || event.uuid}` || `/concert/${event.alias || event.uuid}`;
 
     const d = new Date(event.date);
 

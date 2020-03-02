@@ -50,7 +50,7 @@ const Event = props => {
                 <title>{addConcert && 'Концерт ' || ''}{event.name} в Москве {date_formatted} | concert.moscow - купить билеты без наценки и сервисного сбора</title>
                 <meta httpEquiv={'description'} content={`Купить билеты на ${addConcert && 'концерт ' || ''}${event.name} в ${event.venue.name}  без наценки и сервисного сбора`}/>
                 <meta httpEquiv={'keywords'} content={`${event.name} в ${event.venue.name}, ${event.name} в Москве, ${event.name} ${date_formatted}, ${event.name}`}/>
-                <link rel={'canonical'} href={`https://concert.moscow/concert/${event.alias || event.uuid}`} />
+                <link rel={'canonical'} href={event.ssr && `https://concert.moscow/${event.alias || event.uuid}` || `https://concert.moscow/concert/${event.alias || event.uuid}`} />
                 <EventJSONLd event={event} />
             </Head>
             <Container>
