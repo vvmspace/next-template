@@ -3,7 +3,6 @@ import React from 'react';
 import NavBar from "./NavBar";
 import Menu from './Menu';
 import Footer from "./Footer";
-import { YMInitializer } from 'react-yandex-metrika';
 import { makeStyles } from '@material-ui/core/styles';
 
 const layoutStyle = {
@@ -70,7 +69,6 @@ const Layout = props => {
         </div>
         { props.overlay }
         <Footer/>
-        <YMInitializer accounts={[58827937]}/>
     </div>
 )};
 
