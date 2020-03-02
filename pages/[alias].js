@@ -63,8 +63,6 @@ Post.getInitialProps = async function({ query }) {
         event = res.data;
     }
 
-    console.log(`Show data fetched. Count: ${venue.events.length}`);
-
     return {
         venue,
         event
