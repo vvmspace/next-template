@@ -54,7 +54,7 @@ const Event = props => {
                 <EventJSONLd event={event} />
             </Head>
             <Container>
-            <Typography variant="h3" component="h1" gutterBottom>
+            <Typography variant={(name.length > 20) && 'h5' || 'h3'} component="h1" gutterBottom>
                 {addConcert && 'Концерт ' || ''}{name} в Москве
             </Typography>
                 <Grid container spacing={2}>
