@@ -98,7 +98,7 @@ const Event = props => {
                         <Typography align={'justify'} component={'div'} variant={'body1'}>{
                             ((typeof window !== 'undefined') || (event.ssr)) && renderHTML(event.description
                                 .replace(event.name, `<strong>${event.name}</strong>`)
-                                .replace('ponominalu.ru', '<a href="https://concert.moscow/">concert.moscow</a>')) || ''}</Typography>
+                                ) || ''}</Typography>
                     </Grid>
 
                 </Grid>
