@@ -45,3 +45,4 @@ const VenuePage = props => {
         </Layout>
     );
 }
+export default VenuePage;
