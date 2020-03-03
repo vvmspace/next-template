@@ -62,16 +62,16 @@ const Event = props => {
                         <img src={event.image && event.image.replace('218x161', '654x483') || '/cm.png'} style={{width: '100%', height: 'auto'}} /> <YandexShare/>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                        <Typography variant="h5" component="h2">{name} {date_formatted}</Typography>
+                        <Typography style={{marginTop: 20}} variant="h5" component="h2">{name} {date_formatted}</Typography>
                         <Typography variant="subtitle2" component="p">Начало {isConcert && 'концерта' || 'мероприятия'}: {start_time}, подходите заблаговременно</Typography>
                         {(event.age > 0) && (<Typography variant="subtitle2" component="p">Возрастное ограничение: {event.age}+</Typography>)}
-                        <Typography variant="h5" component="h2" gutterBottom align={'justify'}>
+                        <Typography style={{marginTop: 20}} variant="h5" component="h2" gutterBottom align={'justify'}>
                             Место проведения {addConcert && 'концерта ' || ''}{name} в Москве:
                         </Typography>
                         <Typography variant="subtitle2" component="p" gutterBottom>
                             <a href={`/${event.venue.alias}`}>{event.venue.name}</a>, {event.venue.address}
                         </Typography>
-                        <Typography variant="h5" component="h2" gutterBottom align={'justify'}>
+                        <Typography variant="h5" style={{marginTop: 20}} component="h2" gutterBottom align={'justify'}>
                             Стоимость билетов на {addConcert && 'концерт ' || ''}{name} в {event.venue.name}:
                         </Typography>
                         <Typography variant="subtitle2" component="p" gutterBottom>
