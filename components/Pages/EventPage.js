@@ -59,7 +59,7 @@ const Event = props => {
                 </Typography>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                        <img src={event.image && event.image.replace('218x161', '654x483') || '/cm.png'} style={{width: '100%', height: 'auto'}} /> <YandexShare/>
+                        <img src={event.image && event.image.replace('218x161', '654x483') || (event.max_price >= 60000) && '/cm.png' || '/cm2.png'} style={{width: '100%', height: 'auto'}} /> <YandexShare/>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                         <Typography style={{marginTop: 20}} variant="h5" component="h2">{name} {date_formatted}</Typography>
