@@ -31,7 +31,7 @@ const Post = props => {
         <Layout>
             <Head>
                 <title> concert.moscow - билеты на концерты в Москве без наценки и сервисного сбора</title>
-                <meta httpEquiv={'description'} content={'Самые ожидаемые концерты 2020 года'} />
+                <meta name={'description'} content={'Самые ожидаемые концерты 2020 года'} />
             </Head>
             <Typography gutterBottom variant="h3" component="h1">
                 Концерты в Москве

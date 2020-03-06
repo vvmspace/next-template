@@ -23,7 +23,7 @@ const VenuePage = props => {
             <Head>
                 <title>Концерты в {name} | concert.moscow - билеты на концерты в Москве без наценки и сервисного
                     сбора</title>
-                <meta httpEquiv={'description'}
+                <meta name={'description'}
                       content={`Афиша концертов в ${name}. Официальные билеты без наценки и сервисного сбора.`}/>
                 <link rel={'canonical'} href={`https://concert.moscow/${alias || uuid}`}/>
             </Head>
