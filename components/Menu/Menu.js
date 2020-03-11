@@ -76,7 +76,9 @@ const links = [
             text: 'Главклуб',
             href: '/glavclub',
             icon: <WhatshotIcon style={{color: 'red'}}/>,
-        }, tr([{
+        },
+
+            tr([{
             text: 'Scooter',
             href: '/scooter',
             icon: <WhatshotIcon style={{color: 'red'}}/>,
@@ -96,7 +98,9 @@ const links = [
             text: 'СерьГа',
             href: '/serga-may-29-2020',
             icon: <WhatshotIcon style={{color: 'red'}}/>,
-        },])],
+        },])
+
+        ],
     },
 
     {
