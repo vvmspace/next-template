@@ -63,7 +63,7 @@ const bottomLinks = [{
     },
 ];
 
-const tr = arr => arr[new Date().getSeconds() % arr.length];
+const tr = arr => arr[new Date().getHours() % arr.length];
 
 const links = [
 
