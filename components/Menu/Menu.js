@@ -63,6 +63,8 @@ const bottomLinks = [{
     },
 ];
 
+const tr = arr => arr[new Date().getSeconds() % arr.length];
+
 const links = [
 
     {   title: 'Горячее',
@@ -74,11 +76,19 @@ const links = [
             text: 'Главклуб',
             href: '/glavclub',
             icon: <WhatshotIcon style={{color: 'red'}}/>,
-        },{
+        }, tr([{
             text: 'Scooter',
             href: '/scooter',
             icon: <WhatshotIcon style={{color: 'red'}}/>,
-        }]
+        },{
+            text: 'Сергей Безруков',
+            href: '/sergej-bezrukov-march-29-2020',
+            icon: <WhatshotIcon style={{color: 'red'}}/>,
+        },{
+            text: 'Чиж и Ко',
+            href: '/chizh-i-co',
+            icon: <WhatshotIcon style={{color: 'red'}}/>,
+        },])],
     },
 
     {
