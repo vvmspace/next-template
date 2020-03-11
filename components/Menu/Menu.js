@@ -88,6 +88,14 @@ const links = [
             text: 'Чиж и Ко',
             href: '/chizh-i-co',
             icon: <WhatshotIcon style={{color: 'red'}}/>,
+        },{
+            text: 'Кино',
+            href: '/kino',
+            icon: <WhatshotIcon style={{color: 'red'}}/>,
+        },{
+            text: 'СерьГа',
+            href: '/serga-may-29-2020',
+            icon: <WhatshotIcon style={{color: 'red'}}/>,
         },])],
     },
 
