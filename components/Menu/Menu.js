@@ -75,8 +75,8 @@ const links = [
             href: '/glavclub',
             icon: <WhatshotIcon style={{color: 'red'}}/>,
         },{
-            text: 'Fedde le Grand',
-            href: '/fedde-le-grand',
+            text: 'Scooter',
+            href: '/scooter',
             icon: <WhatshotIcon style={{color: 'red'}}/>,
         }]
     },
