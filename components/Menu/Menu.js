@@ -16,53 +16,6 @@ const useStyles = makeStyles({
     }
 });
 
-const venuesLinks = [{
-    text: 'Главклуб',
-    href: '/glavclub',
-    icon: <WhatshotIcon style={{color: 'red'}}/>,
-}];
-
-const topLinks = [/*{
-        text: 'Сегодня',
-        href: '/today',
-    },{
-        text: 'Завтра',
-        href: '/tomorrow',
-    },*//*{
-        text: 'На выходных',
-        href: '/weekends',
-    },*/{
-        text: 'Неделя',
-        href: '/weekly',
-    },{
-        text: 'Top',
-        href: '/top',
-    },
-];
-
-const bottomLinks = [{
-        text: 'Rock',
-        href: '/rock',
-    },{
-        text: 'Rap & Hip-Hop',
-        href: '/rap',
-    },{
-        text: 'Pop',
-        href: '/pop',
-    },/*{
-        text: 'Jazz',
-        href: '/jazz',
-    },{
-        text: 'Акустика',
-        href: '/acoustic',
-    },*/{
-        text: 'Electro',
-        href: '/electro',
-        icon: <BatteryChargingFullIcon style={{color: 'red'}}/>,
-        style: {background: '#448b00', color: 'white', fontWeight: 'bold'}
-    },
-];
-
 const tr = arr => arr[new Date().getHours() % arr.length];
 
 const links = [
@@ -149,12 +102,6 @@ const Menu = props => {
             <MenuList title={links.title} items={links.items} />
             <Divider/>
         </>))}
-        {/*<Divider />*/}
-        {/*<MenuList items={venuesLinks} />*/}
-        {/*<Divider />*/}
-        {/*<MenuList items={topLinks} />*/}
-        {/*<Divider/>*/}
-        {/*<MenuList items={bottomLinks} />*/}
     </div>)
 };
 
