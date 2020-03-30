@@ -26,6 +26,13 @@ const useStyles = makeStyles(theme => ({
             // backgroundColor: green[500],
         },
     },
+    covid: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+    },
+    inliner: {
+        display: 'inline-block',
+    }
 }));
 
 const contentStyle = {
@@ -59,17 +66,22 @@ const Layout = props => {
     }
 
     return (
-    <div onClick={closeMenu}>
-        <NavBar menuToggler={openMenu} />
-        <Drawer anchor={"left"} open={state.menuOpened}>
-            <Menu/>
-        </Drawer>
-        <div className={classes.root}>
-            {props.children}
+        <div onClick={closeMenu}>
+            <NavBar menuToggler={openMenu} />
+            <div className={classes.covid}>
+                <span className={classes.inliner}><a href={"/coronavirus"}>Предупреждение о коронавирусе:</a></span>
+                <span className={classes.inliner}>Сайт работает в автономном режиме.</span>
+                <span className={classes.inliner}>Актуальную информацию смотрите на странице заказа билетов.</span>
+            </div>
+            <Drawer anchor={"left"} open={state.menuOpened}>
+                <Menu/>
+            </Drawer>
+            <div className={classes.root}>
+                {props.children}
+            </div>
+            { props.overlay }
+            <Footer/>
         </div>
-        { props.overlay }
-        <Footer/>
-    </div>
-)};
+    )};
 
 export default Layout;
