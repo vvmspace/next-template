@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import Head from 'next/head';
+import Typography from "@material-ui/core/Typography";
 
 export default props => {
     return (<Layout>
