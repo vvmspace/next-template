@@ -78,9 +78,9 @@ const Layout = props => {
         <div onClick={closeMenu}>
             <NavBar menuToggler={openMenu} />
             <div className={classes.covid}>
-                <span className={classes.inliner}><a className={classes.covidLink} href={"/coronavirus"}>Предупреждение о коронавирусе:</a></span>
-                <span className={classes.inliner}>Сайт работает в автономном режиме.</span>
-                <span className={classes.inliner}>Актуальную информацию смотрите на странице заказа билетов.</span>
+                <span className={classes.inliner}><a className={classes.covidLink} href={"/coronavirus"}>Предупреждение о коронавирусе:</a>&nbsp;</span>
+                <span className={classes.inliner}>Сайт работает в автономном режиме.&nbsp;</span>
+                <span className={classes.inliner}>Актуальную информацию смотрите на странице заказа билетов.&nbsp;</span>
             </div>
             <Drawer anchor={"left"} open={state.menuOpened}>
                 <Menu/>
