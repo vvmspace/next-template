@@ -29,6 +29,15 @@ const useStyles = makeStyles(theme => ({
     covid: {
         textAlign: 'center',
         fontWeight: 'bold',
+        backgroundColor: 'red',
+        color: 'white',
+        padding: '7px 0',
+    },
+    covidLink: {
+        color: 'white',
+        ':visited': {
+            color: 'white',
+        }
     },
     inliner: {
         display: 'inline-block',
@@ -69,7 +78,7 @@ const Layout = props => {
         <div onClick={closeMenu}>
             <NavBar menuToggler={openMenu} />
             <div className={classes.covid}>
-                <span className={classes.inliner}><a href={"/coronavirus"}>Предупреждение о коронавирусе:</a></span>
+                <span className={classes.inliner}><a className={classes.covidLink} href={"/coronavirus"}>Предупреждение о коронавирусе:</a></span>
                 <span className={classes.inliner}>Сайт работает в автономном режиме.</span>
                 <span className={classes.inliner}>Актуальную информацию смотрите на странице заказа билетов.</span>
             </div>
