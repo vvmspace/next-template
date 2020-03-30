@@ -1,18 +1,7 @@
 import Layout from "../components/Layout";
 import Head from 'next/head';
 
-const useStyles = makeStyles({
-    subTitle: {
-        marginTop: 20,
-        marginBottom: 10,
-    }
-});
-
 export default props => {
-    const {attrs, events, metatags:_meta} = props;
-    const withSSR = events.filter(event => event.ssr);
-
-    const classes = useStyles();
     return (<Layout>
         <Head>
             <title>Коронавирус в Москве 2020: отмена меропиятий по причине вспышки Covid-19</title>
