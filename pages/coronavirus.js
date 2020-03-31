@@ -9,7 +9,7 @@ import YandexShare from "react-yandex-share";
 export default props => {
     return (<Layout>
         <Head>
-            <title>Коронавирус в Москве 2020: отмена меропиятий</title>
+            <title>Коронавирус в Москве 2020: отмена мероприятий</title>
             <meta name={'description'} content={'Предупреждение о вспышке пандемии Covid-19 в Москве'}/>
             <meta name={'keywords'} content={'коронавирус, коронавирусная инфекция, covid-19, самоизоляция, карантин'}/>
             <meta property={'og:image'} content={'https://concert.moscow/covid-19.png'} />
