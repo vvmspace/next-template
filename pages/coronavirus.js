@@ -14,7 +14,7 @@ export default props => {
         <Typography variant={'h4'} component={'h2'}>Отмена массовых мероприятий в Москве</Typography>
         <Typography variant={'body1'} component={'p'}>В начале вспышки пандемии <strong>Covid-19</strong> в Москве были запрещены массовые мероприятия численностью более 5000 человек. Фронтмен Rammstein Тилль Линдеманн провёл 2 концерта в Москве и был госпитализирован с атипичной пневмонией.</Typography>
         <Typography variant={'h4'} component={'h2'}>Карантин и комендантский час в Москве</Typography>
-        <Typography variant={'body1'} component={'p'}>Начиная с 30 апреля 2020 года в Москве введёт жесткий карантин и комендантский час. Сидите дома.</Typography>
+        <Typography variant={'body1'} component={'p'}>Начиная с 30 марта 2020 года в Москве введёт жесткий карантин и комендантский час. Сидите дома.</Typography>
 
     </Layout>);
 }
