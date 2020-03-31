@@ -17,7 +17,7 @@ export default props => {
         <Container>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-                    <img src={'/covid-19.png'} style={{width: '100%', height: 'auto'}} title={'Коронавирус в Москве 2020: отмена мероприятий, карантин и самоизоляция'} /> <YandexShare/>
+                    <img src={'/covid-19.png'} style={{width: '100%', height: 'auto'}} alt={'Коронавирус в Москве 2020: отмена мероприятий, карантин и самоизоляция'} /> <YandexShare/>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
                     <Typography variant={'h3'} component={'h1'}>Коронавирус в Москве 2020</Typography>
