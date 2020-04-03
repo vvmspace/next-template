@@ -94,7 +94,7 @@ const Event = props => {
                         && (new Date(event.date).getTime() < new Date('1 May 2020')) && (
                             <Typography variant="h5" component="h2">Коронавирус в Москве</Typography>
                             <Typography variant="subtitle2" component="p" gutterBottom>
-                            Запланированая дата {isConcert: 'концерта' || 'мероприятия'} выпадает на период карантина в Москве, вызваном вспышкой пандемии Covid-19. Следите за обновлениями.
+                            Запланированая дата {isConcert && 'концерта' || 'мероприятия'} выпадает на период карантина в Москве, вызваном вспышкой пандемии Covid-19. Следите за обновлениями.
                             </Typography>
                             <div align={'right'} style={{paddingTop: 20}}>
                             <Button variant="contained" color="red" href="/coronavirus" title={'Коронавирус в Москве 2020'}>
