@@ -34,7 +34,8 @@ export default props => {
         url: event.ssr && `https://concert.moscow/${event.alias || event.uuid}` || `https://concert.moscow/concert/${event.alias || event.uuid}`,
         description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`,
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-        eventStatus: (new Date(event.date).getTime() < new Date('1 May 2020'))
+        eventStatus: (new Date(event.date).getTime() >= new Date('30 March 2020'))
+            && (new Date(event.date).getTime() < new Date('1 May 2020'))
             && 'https://schema.org/EventCancelled'
             || 'https://schema.org/EventScheduled',
     };
