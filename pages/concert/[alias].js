@@ -21,7 +21,6 @@ const Event = props => {
         return (<Error statusCode={errorCode} />);
     }
     return (<EventPage event={props.event}/>);
-    );
 };
 
 Event.getInitialProps = async function({ query }) {
