@@ -91,7 +91,7 @@ const Event = props => {
                             Не забывайте о том, что по мере приближения <strong>{date_formatted}</strong> билеты могут подорожать или закончиться.
                         </Typography>
                         {(new Date(event.date).getTime() >= new Date('30 March 2020'))
-                        && (new Date(event.date).getTime() < new Date('1 May 2020')) && (
+                        && (new Date(event.date).getTime() < new Date('1 May 2020')) && (<>
                             <Typography variant="h5" component="h2">Коронавирус в Москве</Typography>
                             <Typography variant="subtitle2" component="p" gutterBottom>
                             Запланированая дата {isConcert && 'концерта' || 'мероприятия'} выпадает на период карантина в Москве, вызваном вспышкой пандемии Covid-19. Следите за обновлениями.
@@ -100,7 +100,7 @@ const Event = props => {
                             <Button variant="contained" color="red" href="/coronavirus" title={'Коронавирус в Москве 2020'}>
                             Covid-19
                             </Button>
-                            </div>
+                            </div></>
                         ) || (<div align={'right'} style={{paddingTop: 20}}>
                             <Button variant="contained" color="primary" onClick={goPnm(event)}>
                                 Купить билет от {event.min_price} ₽
