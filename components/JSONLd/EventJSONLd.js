@@ -32,7 +32,7 @@ export default props => {
             validFrom: new Date(event.updatedAt).toISOString(),
         },
         url: event.ssr && `https://concert.moscow/${event.alias || event.uuid}` || `https://concert.moscow/concert/${event.alias || event.uuid}`,
-        description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`
+        description: `Билеты без наценки и сервисного сбора от ${event.min_price} ₽`,
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         eventStatus: (new Date(event.date).getTime() < new Date('1 May 2020'))
             && 'https://schema.org/EventCancelled'
