@@ -97,7 +97,7 @@ const Event = props => {
                             Запланированая дата {isConcert && 'концерта' || 'мероприятия'} выпадает на период карантина в Москве, вызваном вспышкой пандемии Covid-19. Следите за обновлениями.
                             </Typography>
                             <div align={'right'} style={{paddingTop: 20}}>
-                            <Button variant="contained" color="red" href="/coronavirus" title={'Коронавирус в Москве 2020'}>
+                            <Button variant="contained" color="secondary" href="/coronavirus" title={'Коронавирус в Москве 2020'}>
                             Covid-19
                             </Button>
                             </div></>
