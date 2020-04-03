@@ -86,10 +86,6 @@ const Event = props => {
                             && (<>составляет <b>{event.min_price}₽</b></>)
                             || (<>находится в диапазоне от <b>{event.min_price}</b> ₽ до <b>{event.max_price}</b> ₽</>)}
                         </Typography>
-                        <Typography variant="h5" component="h3">Билеты дорожают и заканчиваются</Typography>
-                        <Typography variant="subtitle2" component="p" gutterBottom>
-                            Не забывайте о том, что по мере приближения <strong>{date_formatted}</strong> билеты могут подорожать или закончиться.
-                        </Typography>
                         {(new Date(event.date).getTime() >= new Date('30 March 2020'))
                         && (new Date(event.date).getTime() < new Date('1 May 2020')) && (<>
                             <Typography variant="h5" component="h2">Коронавирус в Москве</Typography>
@@ -101,11 +97,15 @@ const Event = props => {
                             Covid-19
                             </Button>
                             </div></>
-                        ) || (<div align={'right'} style={{paddingTop: 20}}>
+                        ) || (<>
+                            <Typography variant="h5" component="h3">Билеты дорожают и заканчиваются</Typography>
+                            <Typography variant="subtitle2" component="p" gutterBottom>
+                                Не забывайте о том, что по мере приближения <strong>{date_formatted}</strong> билеты могут подорожать или закончиться.
+                            </Typography><div align={'right'} style={{paddingTop: 20}}>
                             <Button variant="contained" color="primary" onClick={goPnm(event)}>
                                 Купить билет от {event.min_price} ₽
                             </Button>
-                        </div>)}
+                        </div></>)}
                     </Grid>
                     <Grid item xs={12} xl={12}>
                         <Typography align={'justify'} component={'div'} variant={'body1'}>{
